@@ -1,0 +1,15 @@
+{
+    "project": [
+        {
+            "id": "metagenomes",
+            "nombre": "Comparative analysis of metagenomes",
+            "descripcion": "More...",
+            "ruta": "./assets/img/metagenomes.jpg",
+            "url":"https://ri.conicet.gov.ar/bitstream/handle/11336/36758/CONICET_Digital_Nro.364c89aa-8c76-457c-abcb-1290b06a4562_A.pdf?sequence=2"
+        },
+        { "id": "tumor", "nombre": "Genomic tumor data analysis", "ruta": "./assets/img/tumor.jpg", "url":"" },
+        { "id": "survival", "nombre": "Survival Analysis", "ruta": "./assets/img/survival.jpg", "url":"" },
+        { "id": "repositioning", "nombre": "Drug repositioning data analysis","ruta": "./assets/img/repositioning.jpg", "url":"" },
+        { "id": "signature", "nombre": "Identification of genes prognostic signatures",  "ruta": "./assets/img/signature.jpg", "url":"" }
+    ]
+}
