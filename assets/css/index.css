@@ -1,4 +1,5 @@
 
+
 /*ARCHIVO DE ESTILOS PRINCIPAL*/
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
@@ -22,11 +23,24 @@ main {
 
 .carta,
 .contact,
-.about h1 {
+.about,
+ h1 {
     text-align: center;
     font-family: "Kaushan Script", cursive;
     font-size: 40px;
     color: #f39422;
+}
+
+html {
+    box-sizing: content-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body, html {
+    overflow-x: hidden;
 }
 
 /*====================================================MENU=======================================================*/
@@ -131,6 +145,7 @@ header{
 /*====================================================BANNER=======================================================*/
 
 .banner {
+
     padding-top: 8%;
     width: 100%;
     height: auto;
@@ -141,27 +156,25 @@ header{
     background-image:  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("../img/backgrounds/anderson.png");
     background-size: cover;
     overflow: hidden;
+    
 }
 
 .banner img {
     width: clamp(300px, 100vw, 300px);
     border-radius: 50%;
-    box-sizing: border-box;
+    object-fit: cover;
 }
 
 .card {
   position: relative;
-  width: 304px;
-  height: 304px;
   border-top: 2px solid rgb(245, 168, 3);
   border-right: 2px solid rgb(241, 61, 6);
   border-bottom: 2px solid rgb(231, 89, 6);
   border-left: 2px solid rgba(101, 5, 139, 0.979);
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 0%;
   border-radius: 50%;
-  margin-right: 10%;
 }
 
 .punto-luz {
@@ -185,17 +198,20 @@ header{
 .banner_tex h1 {
   font-family: 'Kaushan Script', cursive;
   color: #fff;
+  margin-left: 10%;
 }
 
 .banner_tex h2 {
     font-family: 'Kaushan Script', cursive;
     color: #F39422;
     font-size: clamp(35px, 12vw, 50px);
+    margin-left: 10%;
 }
 
 .banner_tex h3 {
     color: #fff;
     font-size:110%;
+    margin-left: 10%;
   }
 
 @media screen and (min-width: 580px) and (max-width: 1046px) {
@@ -234,14 +250,15 @@ header{
 
 .about_image img {
     padding-top: 20px;
-    width: clamp(600px, 500vw, 500px);
+    width: clamp(500px, 400vw, 400px);
     border-radius: 50%;
 }
 
 .about_text {
     padding-top: 50px;
     padding-bottom: 20px;
-    padding-left: 50px;
+    margin-left: 3%;
+    width: 50%;
     
 }
 .about_text p {
@@ -275,14 +292,33 @@ header{
    } 
 }
 
-/*====================================================PROJECTS=======================================================*/
-.carta {
+/*====================================================PROJECTS AND HOBBIES=======================================================*/
+.carta, 
+.hobbies {
     align-items: center;
-    background-color: black;
-    height: auto;
     justify-content: center;
     margin-top: -2px;
     width: 100%;
+    height:auto;
+    background-color: #000000;
+}
+
+.carta{
+display:flex;
+flex-direction: column;
+margin: 0 auto; /* Centra el contenedor de la carta */
+padding: 0;
+}
+
+.hobbies {
+background-color: rgb(255, 255, 255);
+margin-top: -5%;
+
+}
+
+.hobbies_text{
+    padding-top: -10% ;
+    padding-bottom: 1% ;
 }
 
 .titulocarta {
@@ -313,15 +349,21 @@ header{
     }
 }
 
-.tarjetas-container {
+.tarjetas-container-projects,
+.tarjetas-container-hobbies {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 80%;
-    margin-left: 9%;
+    align-items: center;
 }
 
- 
+.tarjetas-container-projects,
+.tarjetas-container-hobbies {
+    position: relative;
+    margin: 0 auto;
+}
+
 .tarjeta {
     border: 1px solid #ccc;
     border-radius: 10%;
@@ -334,11 +376,12 @@ header{
     transition: all 50ms ease-out;
     top: 0;
     bottom: 0;
+
 }
 
 .tarjeta:hover {
     cursor: pointer;
-    transform: scale(1.075);
+    transform: scale(1.075); 
 }
 
 
@@ -372,8 +415,6 @@ header{
     height: 100%;
 }
 
-
-
 .tarjeta-luz {
     height: 6px ;
     width: 6px ;
@@ -387,6 +428,31 @@ header{
     box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.8); /* Ajusta el tamaño y opacidad de la cola de luz */
   }
 
+.slick-dots {
+background-color: transparent;   
+}
+
+/*color de los puntos inactivos */
+.slick-dots li button:before {
+    background-color: white;
+    padding: 0%;
+    margin: 0%;
+    border-radius: 50%;
+    font-size:small;
+}
+
+/* color de los puntos activos */
+.slick-dots li.slick-active button:before {
+    color: #fff; /* Color de los puntos activos */
+}
+
+.slick-slide {
+    position: relative;
+}
+
+.slider-container {
+    scroll-snap-type: x mandatory;
+  }
 @keyframes orbit3 {
     0% {
         top: -2%;
@@ -422,8 +488,6 @@ header{
 }
 
 
-
-
 /*====================================================CONTACT=======================================================*/
 
 .contact {
@@ -435,7 +499,7 @@ header{
     justify-content: center;
     align-items: center;
     height: auto;
-    background-color: rgb(198, 22, 22);
+    background-color: rgb(0, 0, 0);
     overflow: hidden
 }
 

@@ -6,13 +6,19 @@
     left: 0;
     background: url("../img/backgrounds/wave.png");
     animation: animate 20s linear infinite;
+    box-sizing:0px;
+    overflow: hidden;
 }
 
 .top-wave .shape-fill {
    fill: black;
    width: 5px;
+   margin: 0%;
+   padding: 0%;
 }
 
 .svg-invertido {
     transform: scaleY(-1);
+    margin-bottom: -1px;
 }
+

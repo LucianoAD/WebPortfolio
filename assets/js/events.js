@@ -1,23 +1,16 @@
 
-//CAMBIAR TEXTO DE BOTON DE la SECCION ABOUT AL PASAR POR ENCIMA
-function cambiarTexto(nuevoTexto) {
-  document.getElementById("miBoton").innerHTML = nuevoTexto;
-}
 
-//ANIMACION DE LA SECCION CARTA QUE HIZO YANI 
-//(pero para que se ejecute cuando el usuario baja a la seccion, asi se ve sino se pierde a menos que el usuario baje rapido)
+
+// Agregar la animación a "carta"
 window.addEventListener("scroll", function () {
-  var section = document.querySelector(".titulocarta");
-  var sectionOffsetTop = section.offsetTop;
-  var windowHeight = window.innerHeight;
-  var scrollTop = window.scrollY;
-
-  if (scrollTop + windowHeight > sectionOffsetTop) {
-      section.classList.add("titulocarta-animacion");
-  } else {
-      section.classList.remove("titulocarta-animacion");
-  }
+  agregarAnimacionAScroll("carta");
 });
+
+// Agregar la animación a "hobbies"
+window.addEventListener("scroll", function () {
+  agregarAnimacionAScroll("hobbies");
+});
+
 
 //IR A LA SECCION A TRAVES DE LOS ENLACES DEL MENU
 
@@ -41,3 +34,12 @@ menuLinks.forEach(function (link) {
       });
   });
 });
+
+
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted) {
+      // Si la página es recuperada de la caché, se recarga para asegurar que se ve correctamente
+      window.location.reload();
+  }
+});
+

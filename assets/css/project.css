@@ -1,0 +1,215 @@
+/*ARCHIVO DE ESTILOS PRINCIPAL*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@500;600&display=swap");
+
+/*==================================================== FORMATO GENERAL=======================================================*/
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: "Raleway", sans-serif;
+}
+
+main {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}
+
+html {
+    box-sizing: content-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+/*====================================================MENU=======================================================*/
+.padre {
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    position:fixed;
+    z-index: 1;
+    background-color: #000000;
+}
+
+.menu {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 50px;
+    align-items: center;
+    justify-content: right;
+    margin-right: 5%;
+}
+
+.nav a {
+    color: #f3f3fa;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.nav a:hover{
+    background-color: #353564;
+    border-radius: 3px;
+    background-position: 100% 0;
+  }
+  
+.fa-brands {
+    font-size: 25px;
+}
+
+
+@media (max-width: 579px) {
+    header .menu {
+        display: block;
+        justify-content: center;
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+    .margen-interno {
+        padding: 0px 25px;
+        justify-content: center;
+    }
+    
+   
+}
+
+@media screen and (min-width: 580px) and (max-width: 750px) {
+    .nav a {
+        font-size: 12px;
+        margin-left: 12px;
+    }
+    .margen-interno{
+        padding: 0px 20px;
+    }
+
+    .logo{
+        text-align: center;
+    }
+
+    .social p{
+        font-size: 15px;
+    }
+
+    .social a {
+        display: flex;
+        align-items: center;
+    }
+   
+}
+/*====================================================PROJECT=======================================================*/
+
+.project {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    text-align: left;
+    display:block;
+}
+
+
+h1 {
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: large;
+  margin-bottom: 2%;
+  margin-top: 4%;
+  margin-left: 2%;
+  width: 100%;
+  font-weight: bold;
+}
+
+
+.text {
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 8px 60px 10px 60px; 
+}
+
+h2 {
+    font-weight: bold;
+    font-size:large;
+}
+
+h3 {
+    font-weight: bold;
+    font-size:medium;
+}
+
+p {
+    margin-bottom: 10px;
+
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.section-content {
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: decimal;
+}
+
+ul ul {
+    list-style-type: disc;
+}
+
+@media screen and (min-width: 580px) and (max-width: 1046px) {
+    .project {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .project p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .project {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .project p {
+        font-size: medium;
+    }
+    .project img {
+        width: clamp(300px, 30vw, 30px);
+    }
+}
