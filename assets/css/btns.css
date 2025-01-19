@@ -42,21 +42,26 @@
   box-shadow: inset 0 0 20px 0 #f39422;
 }
 
-
-.tarjeta-button {
+.tarjeta-nombre {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 20px;
-  position: fixed;
-  bottom: 5%;
+  position: absolute; /* Ahora es relativo a .tarjeta */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -0%);
-  color: white;
-  opacity: 0;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  background-color: black;
+  opacity: 0; /* Oculto por defecto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   z-index: 1;
-  background-color: transparent;
-  border-color: transparent;
+  border-radius: 6%;
 }
 
-.tarjeta:hover button {
-  opacity: 1;
+/* Mostrar el nombre cuando el mouse esté sobre la tarjeta */
+.tarjeta:hover .tarjeta-nombre {
+  opacity: 1; /* Muestra el nombre */
+  pointer-events: auto; /* Reactiva los eventos si necesitas interacción */
 }

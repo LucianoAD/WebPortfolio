@@ -2,22 +2,55 @@
     "project": [
         {
             "id": "metagenomes",
-            "nombre": "Analysis of metagenomes",
-            "descripcion": "More...",
+            "nombre": "Metagenome Data Analysis",
             "ruta": "./assets/img/metagenomes.jpg",
             "url": "project_1.html"
         },
-        { "id": "tumor", "nombre": "Genomic tumor data analysis", "ruta": "./assets/img/tumor.jpg", "url":"project_2.html" },
-        { "id": "survival", "nombre": "Survival Analysis", "ruta": "./assets/img/survival.jpg", "url":"" },
-        { "id": "repositioning", "nombre": "Drug repositioning data analysis","ruta": "./assets/img/repositioning.jpg", "url":"" },
-        { "id": "signature", "nombre": "Identification of genes prognostic signatures",  "ruta": "./assets/img/signature.jpg", "url":"" }
+        { "id": "tumor", "nombre": "Transcriptomic Data Analysis", "ruta": "./assets/img/tumor.jpg", "url":"project_2.html" },
+        { "id": "survival", "nombre": "Patient Clinical Data Analysis", "ruta": "./assets/img/survival.jpg", "url":"" },
+        { "id": "repositioning", "nombre": "Experimental Data Analysis","ruta": "./assets/img/repositioning.jpg", "url":"" },
+        { "id": "signature", "nombre": "Application of Machine Learning Techniques",  "ruta": "./assets/img/signature.jpg", "url":"" }
     ],
 
     "hobbie": [
         {
             "id": "thisportafolio",
             "nombre": "This static portafolio",
-            "descripcion": "More...",
+            "ruta": "./assets/img/thisportafolio.jpg",
+            "url":""
+        },
+        { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
+        { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
+        
+    ],
+
+    "curses": [
+        {
+            "id": "thisportafolio",
+            "nombre": "This static portafolio",
+            "ruta": "./assets/img/thisportafolio.jpg",
+            "url":""
+        },
+        { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
+        { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
+        
+    ],
+    "confereses": [
+        {
+            "id": "thisportafolio",
+            "nombre": "This static portafolio",
+            "ruta": "./assets/img/thisportafolio.jpg",
+            "url":""
+        },
+        { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
+        { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
+        
+    ],
+
+    "awards": [
+        {
+            "id": "thisportafolio",
+            "nombre": "This static portafolio",
             "ruta": "./assets/img/thisportafolio.jpg",
             "url":""
         },

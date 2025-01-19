@@ -46,7 +46,7 @@ window.onload = function() {
             $('.slick-slide').attr('tabindex', '0');
 
             // Asignar eventos de clic a los botones después de la inicialización del carrusel
-            $(document).on('click', '.tarjeta-button', function() {
+            $(document).on('click', '.tarjeta', function() {
                 const url = $(this).closest('.tarjeta').data('url');
                 window.location.href = url;
             });
@@ -69,20 +69,38 @@ function createTarjeta(data) {
     const imagen = document.createElement("img");
     imagen.src = data.ruta;
     imagen.alt = data.nombre;
-
-    const nombre = document.createElement("h3");
-    nombre.textContent = data.nombre;
-
-    const btn = document.createElement("button");
-    btn.textContent = "More...";
-    btn.classList.add("tarjeta-button");
+ 
+    const nombreBoton = document.createElement("button");
+    nombreBoton.textContent = data.nombre;
+    nombreBoton.classList.add("tarjeta-nombre"); // Clase para estilizar el botón como si fuera un nombre
+    nombreBoton.addEventListener("click", () => {
+        // Acciones al hacer clic en el botón
+        window.location.href = data.url; // Navegar a la URL asociada
+    });
 
     // Agregar elementos a la tarjeta
     tarjeta.appendChild(luz);
     tarjeta.appendChild(punto);
     tarjeta.appendChild(imagen);
-    tarjeta.appendChild(nombre);
-    tarjeta.appendChild(btn);
+    tarjeta.appendChild(nombreBoton);
 
     return tarjeta;
+
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('.toggle-methodology');
+    const methodologyContent = document.querySelector('.methodology-content');
+    const arrow = document.querySelector('.arrow');
+
+    // Al hacer clic en el botón, alternamos la visibilidad del contenido
+    toggleButton.addEventListener('click', function () {
+        if (methodologyContent.style.display === 'none' || methodologyContent.style.display === '') {
+            methodologyContent.style.display = 'block'; // Mostrar el contenido
+            arrow.textContent = '▼';  // Flecha hacia abajo
+        } else {
+            methodologyContent.style.display = 'none'; // Ocultar el contenido
+            arrow.textContent = '➔';  // Flecha hacia la derecha
+        }
+    });
+});
