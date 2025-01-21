@@ -471,6 +471,36 @@ background-color: transparent;
     margin-top: -5%;
 }
 
+.container-curses_taken,
+.container-curses_taught {
+   border-radius: 8px;
+   padding: 20px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   background-color: #ccd1d1;
+   margin-top: 3%;
+   width: 40%;
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+
+}
+
+.container-curses_taken{
+    margin-left: 5%;
+}
+.container-curses_taught{
+    margin-right: 5%;
+}
+
+.justify-content-between p {
+    font-family: "Kaushan Script", cursive;
+    color: #864996;
+    font-size: 30px;
+}
+
+
+
+
+
 /*====================== FOOTER ======================*/
 
 footer {

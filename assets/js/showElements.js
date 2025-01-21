@@ -1,58 +1,88 @@
 const tarjetasContainerProjects = document.getElementById("tarjetas-container-projects");
+const tarjetasContainerCourseTaken = document.getElementById("tarjetas-container-coursetaken");
+const tarjetasContainerCourseTaught = document.getElementById("tarjetas-container-coursetaught");
 const tarjetasContainerHobbies = document.getElementById("tarjetas-container-hobbies");
 
-window.onload = function() {
-    // Obtener los datos del archivo JSON
+window.onload = function () {
     fetch("carta.JSON")
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then((data) => {
-            // Recorrer los datos y crear las tarjetas de proyectos
-            data.project.forEach((project) => {
-                const tarjeta = createTarjeta(project);
-                tarjetasContainerProjects.appendChild(tarjeta);
-            });
+            // Proyectos
+            if (tarjetasContainerProjects && data.project) {
+                data.project.forEach((project) => {
+                    const tarjeta = createTarjeta(project);
+                    tarjetasContainerProjects.appendChild(tarjeta);
+                });
+            }
 
-            // Recorrer los datos y crear las tarjetas de hobbies
-            data.hobbie.forEach((hobbie) => {
-                const tarjeta = createTarjeta(hobbie);
-                tarjetasContainerHobbies.appendChild(tarjeta);
-            });
+            // Hobbies
+            if (tarjetasContainerHobbies && data.hobbie) {
+                data.hobbie.forEach((hobbie) => {
+                    const tarjeta = createTarjeta(hobbie);
+                    tarjetasContainerHobbies.appendChild(tarjeta);
+                });
+            }
 
-            // Inicializa Slick Carousel después de que las tarjetas hayan sido añadidas
-            $('.tarjetas-container-projects').slick({
-                slidesToShow: 3, // Número de tarjetas visibles al mismo tiempo
-                slidesToScroll: 1, // Número de tarjetas que se desplazan por clic
+            // Cursos tomados
+            if (tarjetasContainerCourseTaken && data.course_taken) {
+                data.course_taken.forEach((course) => {
+                    const flipCard = createFlipCard(course);
+                    tarjetasContainerCourseTaken.appendChild(flipCard);
+                });
+            }
+
+            // Cursos impartidos
+            if (tarjetasContainerCourseTaught && data.course_taught) {
+                data.course_taught.forEach((course) => {
+                    const flipCard = createFlipCard(course);
+                    tarjetasContainerCourseTaught.appendChild(flipCard);
+                });
+            }
+
+            // Inicialización de Slick
+            $('.tarjetas-container-projects, .tarjetas-container-hobbies').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
                 autoplay: false,
                 arrows: true,
                 dots: true,
                 adaptiveHeight: true,
                 responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1 } }
                 ]
             });
 
-            // Cambiar tabindex a 0 para los elementos del carrusel
+            $('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught').slick({
+                vertical: true, // Establece que el carrusel es vertical
+                slidesToShow: 1, // Muestra una tarjeta a la vez
+                slidesToScroll: 1,
+                swipeToSlide: true, // Permite arrastrar para navegar
+                draggable: true, // Habilita el arrastre
+                touchThreshold: 10, // Ajusta la sensibilidad del touch
+                arrows: false, // Sin flechas de navegación
+                dots: false, // Sin indicadores, opcional
+                verticalSwiping: true, // Activa el swipe vertical
+                infinite: false, // Opcional: sin bucle infinito
+            });            
+
             $('.slick-slide').attr('tabindex', '0');
 
-            // Asignar eventos de clic a los botones después de la inicialización del carrusel
-            $(document).on('click', '.tarjeta', function() {
+            $(document).on('click', '.tarjeta', function () {
                 const url = $(this).closest('.tarjeta').data('url');
-                window.location.href = url;
+                if (url) {
+                    window.location.href = url;
+                }
             });
         })
-        .catch((error) => console.log("Error al obtener los datos del archivo JSON:", error));
+        .catch((error) => console.error("Error al obtener los datos del archivo JSON:", error));
 };
+
 
 function createTarjeta(data) {
     // Crear elementos HTML
@@ -72,7 +102,7 @@ function createTarjeta(data) {
  
     const nombreBoton = document.createElement("button");
     nombreBoton.textContent = data.nombre;
-    nombreBoton.classList.add("tarjeta-nombre"); // Clase para estilizar el botón como si fuera un nombre
+    nombreBoton.classList.add("tarjeta-nombre"); // Clase para estilizar el botón 
     nombreBoton.addEventListener("click", () => {
         // Acciones al hacer clic en el botón
         window.location.href = data.url; // Navegar a la URL asociada
@@ -88,6 +118,50 @@ function createTarjeta(data) {
 
 }
 
+function createFlipCard(course) {
+    const flipCard = document.createElement("div");
+    flipCard.classList.add("flip-card");
+
+    const cardInner = document.createElement("div");
+    cardInner.classList.add("flip-card-inner");
+
+    // Parte frontal con la imagen del certificado
+    const cardFront = document.createElement("div");
+    cardFront.classList.add("flip-card-front");
+
+    const img = document.createElement("img");
+    img.src = course.imagen; // Ruta de la imagen desde JSON
+    cardFront.appendChild(img);
+
+    // Parte trasera con título y descripción
+    const cardBack = document.createElement("div");
+    cardBack.classList.add("flip-card-back");
+
+    const title = document.createElement("h3");
+    title.textContent = course.id; // Usar la ID del curso como título
+    const description = document.createElement("p");
+    description.textContent = course.description; // Descripción del curso
+
+    cardBack.appendChild(title);
+    cardBack.appendChild(description);
+
+    // Combinar las partes en el flip card
+    cardInner.appendChild(cardFront);
+    cardInner.appendChild(cardBack);
+    flipCard.appendChild(cardInner);
+
+    // Si hay un URL asociado, podemos hacer que toda la tarjeta sea un enlace
+    if (course.url) {
+        flipCard.addEventListener("click", () => {
+            window.location.href = course.url; // Navegar al enlace proporcionado
+        });
+    }
+
+    return flipCard;
+}
+
+
+//Ocultar la metodologia de los proyectos y desplazarlas al hacer click
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.querySelector('.toggle-methodology');
     const methodologyContent = document.querySelector('.methodology-content');
@@ -104,3 +178,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
