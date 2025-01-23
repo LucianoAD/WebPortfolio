@@ -29,12 +29,13 @@
             "id": "Full Stack Phyton",
             "imagen": "./assets/img/Courses/FullStackPyhton.png",
             "description":"In this course I learn use djanjo",
-            "url":""
+            "url":"https://github.com/LucianoAD/pizzeria_django_deploy"
         },
-        {"id": "Full Stack Phyton2",
+        {"id": "Full Stack Phyton",
         "imagen": "./assets/img/Courses/FullStackPyhton.png",
         "description":"In this course I learn use djanjo",
         "url":""
+
     }
         
     ],

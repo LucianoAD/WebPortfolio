@@ -474,15 +474,16 @@ background-color: transparent;
 .container-curses_taken,
 .container-curses_taught {
    border-radius: 8px;
-   padding: 20px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    text-align: center;
    background-color: #ccd1d1;
    margin-top: 3%;
    width: 40%;
+   height: auto;
    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-
+   align-items: center;
 }
+
 
 .container-curses_taken{
     margin-left: 5%;
@@ -491,15 +492,115 @@ background-color: transparent;
     margin-right: 5%;
 }
 
+
 .justify-content-between p {
     font-family: "Kaushan Script", cursive;
     color: #864996;
     font-size: 30px;
 }
 
+.slick-slide{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 
+}
 
+.flip-card {
+    margin-bottom: 5%;
+    margin-left: 8%;
+    display: flex;
+    height: 200px;  /* Ajusta la altura de la tarjeta */
+    width: 200px;   /* Asegura un ancho constante */
+    flex-direction: column;  /* Organiza el contenido en columna */
+}
 
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que la imagen ocupe el área sin deformarse */
+    border-radius: 10px;
+}
+
+.flip-card-inner {
+    width: 90%;
+    height: 90%;
+    position:relative;
+    display: grid;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Efecto suave al girar */
+    justify-content: center;
+    justify-items: center;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+}
+
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* Oculta el reverso al frente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+}
+
+.flip-card-front {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+}
+
+.flip-card-back {
+    background-color: #f7f7f7;
+    transform: rotateY(180deg);
+    color: #333;
+    display: flex;           
+    padding: 10px;
+}
+
+.flip-card-left {
+    background-color: #fcf3cf;  /* Color de fondo para la mitad izquierda */
+    flex: 3;                    /* Esto hace que ocupe la mitad del espacio disponible */
+    display: flex;              /* Flexbox para alineación interna */
+    justify-content: center;    /* Centrar contenido horizontalmente */
+    align-items: center;        /* Centrar contenido verticalmente */
+    height: 100%;
+}
+
+.flip-card-right {
+    background-color: #fff;     /* Color de fondo para la mitad derecha */
+    flex: 7;                    /* Esto hace que ocupe la otra mitad del espacio disponible */
+    display: flex;              /* Flexbox para alineación interna */
+    justify-content: center;    /* Centrar contenido horizontalmente */
+    align-items: center;        /* Centrar contenido verticalmente */
+    padding-left: 10px;         /* Ajusta el padding a tu gusto */
+}
+
+.flip-card-back h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;                  /* Eliminar márgenes para un ajuste más preciso */
+}
+
+.flip-card-back p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+    margin: 0;                  /* Eliminar márgenes para un ajuste más preciso */
+}
 
 /*====================== FOOTER ======================*/
 

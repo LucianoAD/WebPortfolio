@@ -19,16 +19,7 @@ window.onload = function () {
                     tarjetasContainerProjects.appendChild(tarjeta);
                 });
             }
-
-            // Hobbies
-            if (tarjetasContainerHobbies && data.hobbie) {
-                data.hobbie.forEach((hobbie) => {
-                    const tarjeta = createTarjeta(hobbie);
-                    tarjetasContainerHobbies.appendChild(tarjeta);
-                });
-            }
-
-            // Cursos tomados
+         // Cursos tomados
             if (tarjetasContainerCourseTaken && data.course_taken) {
                 data.course_taken.forEach((course) => {
                     const flipCard = createFlipCard(course);
@@ -44,6 +35,18 @@ window.onload = function () {
                 });
             }
 
+            // Hobbies
+            if (tarjetasContainerHobbies && data.hobbie) {
+                data.hobbie.forEach((hobbie) => {
+                    const tarjeta = createTarjeta(hobbie);
+                    tarjetasContainerHobbies.appendChild(tarjeta);
+                });
+            }
+            // cargar las imagenes antes de que se muetren
+            imagesLoaded(document.querySelector('.tarjetas-container-coursetaken'), function() {
+                $('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught').slick('setPosition');
+            });
+
             // Inicialización de Slick
             $('.tarjetas-container-projects, .tarjetas-container-hobbies').slick({
                 slidesToShow: 3,
@@ -57,6 +60,15 @@ window.onload = function () {
                     { breakpoint: 480, settings: { slidesToShow: 1 } }
                 ]
             });
+  
+            $('.slick-slide').attr('tabindex', '0');
+
+            $(document).on('click', '.tarjeta', function () {
+                const url = $(this).closest('.tarjeta').data('url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
 
             $('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught').slick({
                 vertical: true, // Establece que el carrusel es vertical
@@ -69,16 +81,9 @@ window.onload = function () {
                 dots: false, // Sin indicadores, opcional
                 verticalSwiping: true, // Activa el swipe vertical
                 infinite: false, // Opcional: sin bucle infinito
-            });            
+                adaptiveHeight: true// Ajusta la altura automáticamente
+            });   
 
-            $('.slick-slide').attr('tabindex', '0');
-
-            $(document).on('click', '.tarjeta', function () {
-                const url = $(this).closest('.tarjeta').data('url');
-                if (url) {
-                    window.location.href = url;
-                }
-            });
         })
         .catch((error) => console.error("Error al obtener los datos del archivo JSON:", error));
 };
@@ -133,49 +138,38 @@ function createFlipCard(course) {
     img.src = course.imagen; // Ruta de la imagen desde JSON
     cardFront.appendChild(img);
 
-    // Parte trasera con título y descripción
+    // Parte trasera con dos secciones: izquierda y derecha
     const cardBack = document.createElement("div");
     cardBack.classList.add("flip-card-back");
 
+    // Contenedor para la mitad izquierda (color diferente)
+    const flipCardLeft = document.createElement("div");
+    flipCardLeft.classList.add("flip-card-left");
+
     const title = document.createElement("h3");
     title.textContent = course.id; // Usar la ID del curso como título
+
+    flipCardLeft.appendChild(title); // Añadimos el título a la parte izquierda
+
+    // Contenedor para la mitad derecha (contenido adicional)
+    const flipCardRight = document.createElement("div");
+    flipCardRight.classList.add("flip-card-right");
+
     const description = document.createElement("p");
     description.textContent = course.description; // Descripción del curso
+    flipCardRight.appendChild(description); // Añadimos la descripción a la parte derecha
+    // Aquí estamos reemplazando la palabra "url" por el enlace
+    const descriptionText = `${course.description}<a href="${course.url}" target="_blank">here</a>.`;
+    description.innerHTML = descriptionText; // Inserta HTML dinámicamente
 
-    cardBack.appendChild(title);
-    cardBack.appendChild(description);
+    // Combinar las secciones en la parte trasera
+    cardBack.appendChild(flipCardLeft);
+    cardBack.appendChild(flipCardRight);
 
-    // Combinar las partes en el flip card
+    // Combinar todas las partes en la tarjeta
     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
     flipCard.appendChild(cardInner);
 
-    // Si hay un URL asociado, podemos hacer que toda la tarjeta sea un enlace
-    if (course.url) {
-        flipCard.addEventListener("click", () => {
-            window.location.href = course.url; // Navegar al enlace proporcionado
-        });
-    }
-
     return flipCard;
 }
-
-
-//Ocultar la metodologia de los proyectos y desplazarlas al hacer click
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.querySelector('.toggle-methodology');
-    const methodologyContent = document.querySelector('.methodology-content');
-    const arrow = document.querySelector('.arrow');
-
-    // Al hacer clic en el botón, alternamos la visibilidad del contenido
-    toggleButton.addEventListener('click', function () {
-        if (methodologyContent.style.display === 'none' || methodologyContent.style.display === '') {
-            methodologyContent.style.display = 'block'; // Mostrar el contenido
-            arrow.textContent = '▼';  // Flecha hacia abajo
-        } else {
-            methodologyContent.style.display = 'none'; // Ocultar el contenido
-            arrow.textContent = '➔';  // Flecha hacia la derecha
-        }
-    });
-});
-
