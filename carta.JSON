@@ -28,37 +28,112 @@
         {
             "id": "Full Stack Phyton",
             "imagen": "./assets/img/Courses/FullStackPyhton.png",
-            "description":"In this course I learn use djanjo",
+            "description":"In this course, I learned to develop a frontend using HTML, CSS, and JS and connect it to a backend implemented in Django. The web app was deployed on PythonAnywhere. You can view the repository ",
             "url":"https://github.com/LucianoAD/pizzeria_django_deploy"
-        },
-        {"id": "Full Stack Phyton",
-        "imagen": "./assets/img/Courses/FullStackPyhton.png",
-        "description":"In this course I learn use djanjo",
-        "url":""
+    },
+        {"id": "Data Training and Artificial Intelligence",
+        "imagen": "./assets/img/Courses/IA_AP.png",
+        "description":"In this course I learned theoretical and practical concepts of artificial intelligence and data science. You can see some practices ",
+        "url":"https://drive.google.com/drive/folders/1-PCQNSnjiGdPjlh7P-YkZy1sUyoiS7G2?usp=sharing"
 
+    },
+    {"id": "Web Full Stack Junior",
+        "imagen": "./assets/img/Courses/AP_FS.png",
+        "description":"For the final assignment of this course, I developed a dynamic portfolio. The backend, written in Java, was deployed on the Koyeb platform. The portfolio has a login functionality, which allows access to the editing mode. On the frontend side, the Angular framework was used to adapt it to a modular architecture. In addition, the design is responsive. The application data was stored in a MySQL database managed through Clever Cloud. You can see it ",
+        "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd"
+    },
+    {"id": "Project Formulation for European Financing",
+    "imagen": "./assets/img/Courses/financiamiento_UE.png",
+    "description":"In this course I learned the basic guidelines for writing projects with the aim of acquiring funding from European Union organizations, mainly from the Erasmus ++ program.",
+    "url":""
+    },
+    {"id": "Python programming oriented to biology",
+    "imagen": "./assets/img/Courses/A2B2C_Pyhton.png",
+    "description":"In this course I learned basic techniques of downloading, manipulating, preprocessing and analyzing biological data from different sources using Python.",
+    "url":""
+    },
+    {"id": "R programming applied to evolutionary studies",
+    "imagen": "./assets/img/Courses/R_evolution.png",
+    "description":"I learned to use R tools to align sequences and build phylogenetic trees",
+    "url":""
+    },
+    {"id": "Bioinformatics and the central dogma of biology",
+    "imagen": "./assets/img/Courses/Bioinf.png",
+    "description":"In this course, explore the use of bioinformatics applications for genomics, transcriptomics, and preoteomics.",
+    "url":""
+    },
+    {"id": "Design and execution of biological tests applied to biomedicine",
+    "imagen": "./assets/img/Courses/Biomed.png",
+    "description":"I learned about experimental design, use of biological models and advanced molecular techniques, as well as data management and interpretation. I also explored good laboratory practices and the application of results in diagnostics, biomarker discovery and therapy development.",
+    "url":""
+    },
+    {"id": "Handling of laboratory animals",
+    "imagen": "./assets/img/Courses/Animales.png",
+    "description":"I learned how to improve the design of an experiment to use the smallest number of animals possible and obtain sufficient results to corroborate a hypothesis. I also learned about the ethical regulations regarding their use.",
+    "url":""
+    },
+    {"id": "Basic cell culture techniques and their applications in molecular biology",
+    "imagen": "./assets/img/Courses/inmuno.png",
+    "description":"In this training, I learned the basic techniques for culturing and maintaining cell lines, as well as the hygiene and safety measures that must be adopted",
+    "url":""
+    },
+    {"id": "Biophysics and cellular biology in neurodegeneration",
+    "imagen": "./assets/img/Courses/iidefar.png",
+    "description":"A course to understand the main techniques used to research in the field of neurodegenerative diseases",
+    "url":""
+    }
+    ],
+    "course_taught": [
+    {
+            "id": "Bioinformatics: applications in genomic medicine",
+            "imagen": "./assets/img/Courses/curse1.png",
+            "description":"I taught this postgraduate course as an elective subject for the Doctorate in Biomedical Sciences. The course includes concepts on omics sciences, information on databases, and tools for genomic data analysis.",
+            "url":""
+    },
+    {
+        "id": "Fundamentals of artificial intelligence and its regulatory framework in Italy",
+        "imagen": "./assets/img/Courses/intro_IA.png",
+        "description":"This course was funded by the Italian government and aimed to educate the general public on basic concepts of AI and encourage critical thinking about its regulation and control. You can see the program ",
+        "url":"/assets/docs/CEI_IA.pdf"
+    },
+    {
+        "id": "Molecular Pathology",
+        "imagen": "./assets/img/Courses/curse2.png",
+        "description":"I participate in the annual teaching of the course, where I am responsible for delivering concepts on cell culture, flow cytometry, proteomics, and genomics to advanced medical students. You can view course program ",
+        "url":"/assets/docs/patologia.pdf"
+    },
+    {
+        "id": "Databases 1",
+        "imagen": "./assets/img/Courses/curse3.png",
+        "description":"In this course, we introduce students to the fundamental concepts of the relational data model and provide practical training in SQL for designing, querying, and managing databases. Our approach combines theory and practical applications to develop essential data management skills",
+        "url":""
+    },
+    {
+        "id": "Data Science Fundamentals",
+        "imagen": "./assets/img/Courses/curse3.png",
+        "description":"In the course Foundations of Data Science, we teach students how to develop efficient workflows for analyzing various types of data. Additionally, we train them in interpreting and visualizing results through clear and accessible graphical representations, designed to facilitate understanding for general, non-technical audiences",
+        "url":""
+    }, 
+    {
+        "id": "Introduction to artificial intelligence",
+        "imagen": "./assets/img/Courses/curse3.png",
+        "description":"In the course Foundations of Data Science, we teach students how to develop efficient workflows for analyzing various types of data. Additionally, we train them in interpreting and visualizing results through clear and accessible graphical representations, designed to facilitate understanding for general, non-technical audiences",
+        "url":""
+    },
+    {
+        "id": "Programming environment",
+        "imagen": "./assets/img/Courses/curse3.png",
+        "description":"In this course we teach students basic Linux commands, Bash programming, and basic programming tools such as Git, GitHub, and Docker,",
+        "url":""
     }
         
     ],
-    "course_taught": [
-        {
-            "id": "IA introduction",
-            "imagen": "./assets/img/Courses/IAintroduction.png",
-            "description":"In this course I...",
-            "url":""
-        }
-        
-    ],
-    "confereses": [
-        {
-            "id": "thisportafolio",
-            "nombre": "This static portafolio",
-            "ruta": "./assets/img/thisportafolio.jpg",
-            "url":""
-        },
-        { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
-        { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
-        
-    ],
+   "conferences": [
+    { "name": "SAIC", "year": "2023", "place":"Argentina", "issue":"Bioinformática", "participation":"Resistencia a 5-FU", "certification":"./assets/img/Conf/conf1.png"},
+    { "name": "Congreso Bionf", "year": "2020", "place":"Argentina", "issue":"Análisis de datos", "participation":"Autor externo", "certification":"./assets/img/Conf/conf2.png"},
+    { "name": "Exopobiot", "year": "2020", "place":"Argentina", "issue":"Animales", "participation":"Desarrollo de modelo murino", "certification":"./assets/img/Conf/conf3.png"},
+    { "name": "AGUM", "year": "2019", "place":"Uruguay", "issue":"Experimentals protocols", "participation":"Metfomin in cancer", "certification":"./assets/img/Conf/conf3.png"}
+],
 
     "awards": [
         {
@@ -70,5 +145,19 @@
         { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
         { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
         
+    ],
+    "titles": [
+        {
+        "title": "Bachelor",
+        "image_url": "./assets/img/Titles/grado.png"
+        },
+        { "title": "Doctorado",
+           "image_url": "./assets/img/Titles/doctorado.png"
+        },
+        {
+        "title": "Espe",
+        "image_url": "./assets/img/Titles/espe.png"
+        }
+
     ]
 }

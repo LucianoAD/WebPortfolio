@@ -22,6 +22,7 @@
       <link rel="stylesheet" href="assets/css/btns.css" />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
       <title>Luciano Anselmino</title>
    </head>
    <body>
@@ -69,11 +70,14 @@
                   I am currently also a professor in a program focused on data analysis with artificial intelligence.<br>
                   <br>
                   Throughout these experiences, I have come to understand that data analysis skills are cross-cutting across any industry. 
-                  I have developed a deep interest in expanding my horizons to new topics and challenges. I am passionate about applying my analytical and programming skills in diverse contexts and am excited to contribute my expertise to innovative projects.
+                  I have developed a deep interest in expanding my horizons to new topics and challenges.
                </p>
             </div>
-            <div class="about_image col-md-5 about-me" data-aos="fade-up" data-aos-duration="900">
-               <img src="./assets/img/data_analysis3.gif" alt="about" />
+            <div class="col-md-5 about-me" data-aos="fade-up" data-aos-duration="900">
+            <div class="about_academic">
+               <p>Academic training</p>
+               <div id="tarjetas-container-titles" class="tarjetas-container-titles"></div>
+            </div>
             </div>
          </div>
          <div class="top-wave svg-invertido">
@@ -106,6 +110,7 @@
                </div>
                <div class="col-md-5 container-curses_taught" data-aos="fade-left" data-aos-duration="2000">
                   <p>Taught</p>
+                  <div id="tarjetas-container-coursetaught" class="tarjetas-container-coursetaught"></div> 
                </div>
             </div>
          </div>
@@ -117,10 +122,11 @@
                   ></path>
                 </svg>
         </div>
-   <div class="carta" id="carta">
-         <h1 class="titulocarta">Congresses and conferences</h1>
-      <div class="tarjetas-container-projects" id="tarjetas-container-projects" data-aos="zoom-in-right" data-aos-duration="1000"></div>
-   </div>
+        <div class="carta" id="carta">
+         <h1 class="titulocarta">Congresses and Conferences</h1>
+         <div class="tarjetas-container-conferences" id="tarjetas-container-conferences" data-aos="zoom-in-right" data-aos-duration="1000">
+         </div>
+     </div>
    <div class="top-wave">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
          <path
@@ -162,6 +168,8 @@
       <script type="text/javascript">
          var particleCanvas = new ParticleNetwork(canvasDiv, options);
       </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
       <script type="text/javascript">
