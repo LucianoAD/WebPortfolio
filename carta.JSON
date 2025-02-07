@@ -12,18 +12,6 @@
         { "id": "signature", "nombre": "Application of Machine Learning Techniques",  "ruta": "./assets/img/signature.jpg", "url":"" }
     ],
 
-    "hobbie": [
-        {
-            "id": "thisportafolio",
-            "nombre": "This static portafolio",
-            "ruta": "./assets/img/thisportafolio.jpg",
-            "url":""
-        },
-        { "id": "dinamic_portafolio", "nombre": "Dinamic Portafolio", "ruta": "./assets/img/dinamicportafolio.jpg", "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd" },
-        { "id": "anderson", "nombre": "Pizzeria Web App", "ruta": "./assets/img/anderson.jpg", "url":"https://github.com/LucianoAD/pizzeria_django_deploy" }
-        
-    ],
-
     "course_taken": [
         {
             "id": "Full Stack Phyton",
@@ -87,7 +75,7 @@
     {
             "id": "Bioinformatics: applications in genomic medicine",
             "imagen": "./assets/img/Courses/curse1.png",
-            "description":"I taught this postgraduate course as an elective subject for the Doctorate in Biomedical Sciences. The course includes concepts on omics sciences, information on databases, and tools for genomic data analysis.",
+            "description":"I taught this postgraduate course as an elective subject for the Doctorate in Biomedical Sciences of National University of Rosario, Argentina. The course includes concepts on omics sciences, information on databases, and tools for genomic data analysis.",
             "url":""
     },
     {
@@ -129,10 +117,12 @@
         
     ],
    "conferences": [
-    { "name": "SAIC", "year": "2023", "place":"Argentina", "issue":"Bioinformática", "participation":"Resistencia a 5-FU", "certification":"./assets/img/Conf/conf1.png"},
-    { "name": "Congreso Bionf", "year": "2020", "place":"Argentina", "issue":"Análisis de datos", "participation":"Autor externo", "certification":"./assets/img/Conf/conf2.png"},
-    { "name": "Exopobiot", "year": "2020", "place":"Argentina", "issue":"Animales", "participation":"Desarrollo de modelo murino", "certification":"./assets/img/Conf/conf3.png"},
-    { "name": "AGUM", "year": "2019", "place":"Uruguay", "issue":"Experimentals protocols", "participation":"Metfomin in cancer", "certification":"./assets/img/Conf/conf3.png"}
+    { "name": "American Association for Cancer Research Meeting", "year": "2020", "place":"USA", "issue":"Experimental Oncology", "participation":"co-author", "url":"https://aacrjournals.org/cancerres/article/80/16_Supplement/2745/642217/Abstract-2745-Drug-repositioning-for-triple"},
+    { "name": "II International Congress of Science and Technology of Laboratory Animals", "year": "2021", "place":"Argentina", "issue":"In vivo models for cancer studies", "participation":"author", "url":"./assets/img/Congresses/AACYTAL.pdf"},
+    { "name": "III Annual Meeting of the Ibero-American Artificial Intelligence Network for Big BioData", "year": "2023", "place":"Argentina", "issue":"AI in Biology and Health", "participation":"author oral presenter", "url":"./assets/img/Congresses/ICB2C_BookAbstract.pdf"},
+    { "name": "18th World Congress on Cancers of the Skin", "year": "2022", "place":"Argentina", "issue":"Bioinformatics", "participation":"co-author", "url":"./assets/img/Congresses/skincancer.pdf"},
+    { "name": "Latin-R", "year": "2023", "place":"Uruguay", "issue":"R programming applications", "participation":"co-author", "url":""},
+    { "name": "Argentine Society of Clinical Research Meeting", "year": "2024", "place":"Argentina", "issue":"Bioinformatics and Therapeutics Targets", "participation":"author whit special mention", "url":""}
 ],
 
     "awards": [

@@ -1,16 +1,6 @@
 
 
 
-// Agregar la animación a "carta"
-window.addEventListener("scroll", function () {
-  agregarAnimacionAScroll("carta");
-});
-
-// Agregar la animación a "hobbies"
-window.addEventListener("scroll", function () {
-  agregarAnimacionAScroll("hobbies");
-});
-
 
 //IR A LA SECCION A TRAVES DE LOS ENLACES DEL MENU
 

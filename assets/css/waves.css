@@ -7,7 +7,6 @@
     background: url("../img/backgrounds/wave.png");
     animation: animate 20s linear infinite;
     box-sizing:0px;
-    overflow: hidden;
 }
 
 .top-wave .shape-fill {

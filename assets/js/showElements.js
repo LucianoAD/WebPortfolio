@@ -1,7 +1,6 @@
 const tarjetasContainerProjects = document.getElementById("tarjetas-container-projects");
 const tarjetasContainerCourseTaken = document.getElementById("tarjetas-container-coursetaken");
 const tarjetasContainerCourseTaught = document.getElementById("tarjetas-container-coursetaught");
-const tarjetasContainerHobbies = document.getElementById("tarjetas-container-hobbies");
 const tarjetasContainerTitles = document.getElementById("tarjetas-container-titles");
 const tarjetasContainerConferences = document.getElementById("tarjetas-container-conferences");
 
@@ -35,14 +34,6 @@ window.onload = function () {
                 data.course_taught.forEach((course) => {
                     const flipCard = createFlipCard(course);
                     tarjetasContainerCourseTaught.appendChild(flipCard);
-                });
-            }
-
-            // Hobbies
-            if (tarjetasContainerHobbies && data.hobbie) {
-                data.hobbie.forEach((hobbie) => {
-                    const tarjeta = createTarjeta(hobbie);
-                    tarjetasContainerHobbies.appendChild(tarjeta);
                 });
             }
 
@@ -98,18 +89,20 @@ window.onload = function () {
                     label.addEventListener("click", onClick);
                 });
             }
-            imagesLoaded(document.querySelectorAll('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught, .tarjetas-container-titles'), function () {
-                $('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught, .tarjetas-container-titles').slick('setPosition');
+            imagesLoaded(document.querySelectorAll('tarjetas-container-projects,.tarjetas-container-coursetaken, .tarjetas-container-coursetaught, .tarjetas-container-titles'), function () {
+                $('.tarjetas-container-projects, .tarjetas-container-coursetaken, .tarjetas-container-coursetaught, .tarjetas-container-titles').slick('setPosition');
             });
 
             // Inicialización de Slick para contenedores horizontales
-            $('.tarjetas-container-projects, .tarjetas-container-hobbies').slick({
+            $('.tarjetas-container-projects').slick({
                 slidesToShow: 3,
-                slidesToScroll: 1,
+                slidesToScroll: 3,
                 autoplay: false,
                 arrows: true,
                 dots: true,
-                adaptiveHeight: true,
+                infinite: false,
+                adaptiveHeight: false,
+                centerMode: false,
                 responsive: [
                     { breakpoint: 768, settings: { slidesToShow: 2 } },
                     { breakpoint: 480, settings: { slidesToShow: 1 } }
@@ -245,6 +238,19 @@ function createFlipCard(course) {
     return flipCard;
 }
 
+function adjustGlobalSlideHeights() {
+    let maxHeight = 0;
+    // Recorremos TODOS los .conference-item dentro de los carruseles
+    $('.conference-carousel-container .conference-item').each(function () {
+        const thisHeight = $(this).outerHeight(true);
+        if (thisHeight > maxHeight) {
+            maxHeight = thisHeight;
+        }
+    });
+    // Aplicamos la altura máxima global a cada item
+    $('.conference-carousel-container .conference-item').css('min-height', maxHeight + 'px');
+}
+
 function showConferenceCarousel(year, conferences, container) {
     // Filtrar las conferencias por año
     const conferencesForYear = conferences.filter(conf => conf.year === year);
@@ -254,57 +260,75 @@ function showConferenceCarousel(year, conferences, container) {
     carouselContainer.classList.add("conference-carousel-container");
 
     // Limpiar el contenedor para asegurarse de que no haya duplicados
-    container.innerHTML = ''; // Limpiar el contenedor de conferencias
+    container.innerHTML = '';
 
     // Crear el carrusel con las conferencias de ese año
     const conferenceItems = conferencesForYear.map(conf => {
+        const slideContainer = document.createElement("div");
+        slideContainer.classList.add("slide-container");
+
         const item = document.createElement("div");
         item.classList.add("conference-item");
 
-        const img = document.createElement("img");
-        img.src = conf.certification;
-
         const title = document.createElement("h3");
-        title.classList.add("conference-title");  // Clase personalizada para el título
+        title.classList.add("conference-title");
         title.innerText = conf.name;
 
         const details = document.createElement("p");
-        details.classList.add("conference-details");  // Clase personalizada para los detalles
+        details.classList.add("conference-details");
         details.innerHTML = `
             <strong>Place:</strong> ${conf.place}<br>
             <strong>Category:</strong> ${conf.issue}<br>
-            <strong>Participation:</strong> ${conf.participation}
+            <strong>Participation:</strong> ${conf.participation}<br>
         `;
 
-        item.appendChild(img);
+        const link = document.createElement("a");
+        link.href = conf.url;
+        link.target = "_blank";
+        link.classList.add("conference-link");
+        link.innerText = "About the work presented";
+
+        details.appendChild(link);
         item.appendChild(title);
         item.appendChild(details);
 
-        return item;
+        slideContainer.appendChild(item);
+        return slideContainer;
     });
 
-    // Agregar los items al contenedor del carrusel
     conferenceItems.forEach(item => {
         carouselContainer.appendChild(item);
     });
 
-    // Agregar el carrusel al contenedor de conferencias
     container.appendChild(carouselContainer);
 
-    // Inicializar Slick para el carrusel
+    // Inicializar Slick
     $(carouselContainer).slick({
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: false,
+        edgeFriction: 0, // Eliminar resistencia al llegar al final
         arrows: true,
-        dots: true,
-        adaptiveHeight: true,
+        dots: false,
+        adaptiveHeight: false,
+        variableWidth: false,
+        centerPadding: "0px",
+        centerMode: false,
         responsive: [
-            { breakpoint: 768, settings: { slidesToShow: 2 } },
+            { breakpoint: 768, settings: { slidesToShow: 1 } },
             { breakpoint: 480, settings: { slidesToShow: 1 } }
         ]
     });
+
+    $(carouselContainer).on('init', function() {
+        $(carouselContainer).slick('setPosition');
+    });
+    
+    // En lugar de ajustar solo este carrusel, llamamos a la función global
+    adjustGlobalSlideHeights();
 }
+
+
 
 function setActiveYear(selectedYear) {
     // Obtener todos los puntos y etiquetas
@@ -326,3 +350,5 @@ function setActiveYear(selectedYear) {
         selectedLabel.classList.add("active");
     }
 }
+
+

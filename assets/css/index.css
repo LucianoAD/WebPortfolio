@@ -24,6 +24,8 @@ main {
 .carta,
 .contact,
 .about,
+.meetings,
+.carta-light
  h1 {
     text-align: center;
     font-family: "Kaushan Script", cursive;
@@ -41,6 +43,7 @@ html {
 
 body, html {
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /*====================================================MENU=======================================================*/
@@ -49,7 +52,6 @@ body, html {
     display: flex;
     height: auto;
     justify-content: center;
-    overflow: hidden;
 }
 
 a {
@@ -58,8 +60,9 @@ a {
 
 header{
     width: 100%;
-    position:fixed;
-    z-index: 1;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     box-shadow: inset 0 0 5px 0 #f9f9fa;
     background-color: #000000;
 }
@@ -146,41 +149,38 @@ header{
 
 .banner {
 
-    padding-top: 8%;
+    padding-top: 6%;
     width: 100%;
-    height: auto;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(13, 22, 33, 255);
     background-image:  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("../img/backgrounds/anderson.png");
     background-size: cover;
-    overflow: hidden;
+    overflow: visible;
     
 }
 
 .banner img {
-    width: clamp(300px, 100vw, 300px);
+    width: clamp(250px, 100vw, 250px);
     border-radius: 50%;
     object-fit: cover;
 }
 
 .card {
   position: relative;
-  border-top: 2px solid rgb(245, 168, 3);
-  border-right: 2px solid rgb(241, 61, 6);
-  border-bottom: 2px solid rgb(231, 89, 6);
-  border-left: 2px solid rgba(101, 5, 139, 0.979);
   justify-content: center;
   align-items: center;
   padding: 0%;
   border-radius: 50%;
+  background-color: transparent; 
 }
 
 .punto-luz {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 6.5px;
+    height: 6.5px;
     background-color: white;
     border-radius: 50%;
     animation: orbit2 3s linear infinite; /* Ajusta la duración según sea necesario */
@@ -190,8 +190,8 @@ header{
   }
 
 @keyframes orbit2 {
-	from { 	transform: rotate(0deg) translateX(150px) rotate(0deg); }
-	to   {  transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+	from { 	transform: rotate(0deg) translateX(125px) rotate(0deg); }
+	to   {  transform: rotate(360deg) translateX(125px) rotate(-360deg); }
 }
 
 
@@ -243,8 +243,7 @@ header{
     justify-content: center;
     margin-top: -7%;
     margin-bottom: -5%;
-    overflow: hidden;
-    height: 490px;
+    min-height: 500px;
 }
 
 .about_image img {
@@ -341,34 +340,19 @@ div.about_academic p {
    } 
 }
 
-/*====================================================PROJECTS AND HOBBIES=======================================================*/
-.carta, 
-.hobbies {
+/*====================================================WORKS=======================================================*/
+.carta, .meetings {
     align-items: center;
     justify-content: center;
     margin-top: -2px;
     width: 100%;
-    height:auto;
     background-color: #000000;
-}
-
-.carta{
-display:flex;
+    display:flex;
 flex-direction: column;
 margin: 0 auto; /* Centra el contenedor de la carta */
 padding: 0;
 }
 
-.hobbies {
-background-color: rgb(255, 255, 255);
-margin-top: -5%;
-
-}
-
-.hobbies_text{
-    padding-top: -10% ;
-    padding-bottom: 1% ;
-}
 
 .titulocarta {
     text-align: center;
@@ -398,23 +382,22 @@ margin-top: -5%;
     }
 }
 
-.tarjetas-container-projects,
-.tarjetas-container-hobbies {
+.tarjetas-container-projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    max-width: 80%;
     align-items: center;
+    margin: 0 auto; /* Centra el carrusel */
 }
 
-.tarjetas-container-projects,
-.tarjetas-container-hobbies {
+.tarjetas-container-projects {
     position: relative;
     margin: 0 auto;
 }
 
 .tarjeta {
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 10%;
     margin-right: 30px;
     width: 330px;
@@ -454,6 +437,8 @@ margin-top: -5%;
     box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.8); /* Ajusta el tamaño y opacidad de la cola de luz */
   }
 
+
+
 .slick-dots {
 background-color: transparent;   
 }
@@ -476,9 +461,19 @@ background-color: transparent;
     position: relative;
 }
 
-.slider-container {
+.tarjetas-container-projects .slider-container {
     scroll-snap-type: x mandatory;
+    
   }
+
+  .tarjetas-container-projects .slick-list {
+    display: flex !important;
+    padding-left: 32px;
+}
+
+.tarjetas-container-projects .slick-track {
+    display: flex !important;
+}
 @keyframes orbit3 {
     0% {
         top: -2%;
@@ -508,7 +503,7 @@ background-color: transparent;
         margin-left: 12%;
     }
 
-    .carta {
+    .carta, .meetings {
         padding-bottom: 70px;
     }
 }
@@ -517,10 +512,18 @@ background-color: transparent;
 /*====================================================CURSES=======================================================*/
 .carta-light{
     background-color: #fff;
-    width: auto;
-}
+        align-items: center;
+        justify-content: center;
+        margin-top: -7%;
+        margin-bottom: -5%;
+        overflow: visible;
+        min-height: 600px;
+    }
+
 .titulocarta-ligth{
-    margin-top: -5%;
+    margin-top: 0px;
+    overflow: visible;
+
 }
 
 .container-curses_taken,
@@ -528,7 +531,7 @@ background-color: transparent;
    border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    text-align: center;
-   background-color: #ccd1d1;
+   background-color: #dfe2e2;
    margin-top: 3%;
    width: 40%;
    height: auto;
@@ -602,7 +605,7 @@ background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
 }
@@ -657,6 +660,9 @@ background-color: transparent;
 }
 
 /*====================== CONFERENCES ==================================================================*/
+
+
+
 /* Contenedor principal del timeline */
 .timeline-line {
     display: flex;
@@ -666,7 +672,7 @@ background-color: transparent;
     margin: 50px auto;
     position: relative;
     border-top: 3px solid white; /* Línea horizontal */
-    padding: 0 5vw;
+    padding: 0 1vw;
 }
 
 /* Agregar flechas en los extremos de la línea */
@@ -677,13 +683,11 @@ background-color: transparent;
     color: white;
     position: absolute;
     top: -28px;
-
 }
 
 .timeline-line::after {
     content: "❯"; /* Flecha derecha */
     right: -25px;
-    
 }
 
 .timeline-line::before {
@@ -723,24 +727,15 @@ background-color: transparent;
 
 /* Efecto hover */
 .timeline-item:hover .timeline-point {
-    background-color: rgb(245, 168, 3);; /* Cambia el color del punto */
+    background-color: rgb(245, 168, 3); /* Cambia el color del punto */
     transform: scale(1.5); /* Aumenta el tamaño */
 }
 
 .timeline-item:hover .timeline-label {
     color: rgb(245, 168, 3); /* Cambia el color del texto */
     transform: scale(1.5); /* Aumenta el tamaño */
-    
 }
 
-/* Carrusel oculto por defecto */
-.conference-carousel {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
 
 /* Estilo para el punto y la etiqueta activa */
 .timeline-point.active,
@@ -765,62 +760,103 @@ background-color: transparent;
     margin-top: 10px;
 }
 
-/* Estilos para las conferencias dentro del carrusel */
-.conference-card {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
+
+/* -------------------------------
+   Contenedor del carrusel
+--------------------------------- */
+
 
 .conference-carousel-container {
-    margin-top: 100px;
-}
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    position: relative; /* Para posicionar las flechas si es necesario */
+    display: flex;
+    align-items: stretch;
+  }
+  
+ .slide-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 
-.conference-item {
-    padding: 10px;
+}
+  /* -------------------------------
+     Estilos de Slick (usar los valores por defecto)
+  --------------------------------- */
+  .conference-carousel-container .slick-list {
+    overflow: hidden;  /* Recorta cualquier contenido que sobresalga */
+    margin: 0;
+  }
+  
+  
+  /* Agrega un pequeño padding a cada slide para separarlos */
+  .slick-slide {
+    box-sizing: border-box;
+    padding: 0 5px;
+  }
+  
+  /* -------------------------------
+     Tarjeta de conferencia (Slide)
+  --------------------------------- */
+  .conference-item {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #000000;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px; /* Usamos px para consistencia */
+    overflow: visible;    /* Recorta el contenido que sobresalga del borde */
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-}
-
-.conference-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-.timeline-item {
-    cursor: pointer;
-}
-
-
-/* Cambiar el tamaño del título dentro de cada slide */
-.conference-title {
-    font-size: 16px; /* Ajusta el tamaño del texto del título */
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Cambiar el tamaño del texto de los detalles dentro de cada slide */
-.conference-details {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Ajusta el tamaño del texto de los detalles */
+  }
+  
+  /* -------------------------------
+     Estilos internos de la tarjeta
+  --------------------------------- */
+  .conference-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .conference-details {
+    font-size: 15px;
     color: white;
-}
-
-
-/*MEDIAQUERYS FOR CONFERENCES
-
-/* Cambiar el tamaño del título dentro de cada slide */
-.conference-title {
-    font-size: 24px; /* Ajusta el tamaño del texto del título */
-}
-
-/* Cambiar el tamaño del texto de los detalles dentro de cada slide */
-.conference-details {
-    font-size: 16px; /* Ajusta el tamaño del texto de los detalles */
-}
-
-
-
+    flex-grow: 1;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  
+  .conference-link {
+    color: rgb(245, 168, 3);
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* -------------------------------
+     Flechas de navegación
+  --------------------------------- */
+  .conference-carousel-container .slick-prev {
+    left: -11px;
+    z-index: 1;
+  }
+  
+  .conference-carousel-container .slick-next {
+    right: -11px;
+    z-index: 1;
+  }
+  
 /*====================== FOOTER ======================*/
 
 footer {
@@ -829,23 +865,19 @@ footer {
     justify-content: center;
     align-items: center;
     height: auto;
-    background-color:#000000;
+    width: 100%;
+    background-color:#ffffff;
     bottom: 0%;
-    margin-top: -1px;
-    overflow: hidden
+    margin-top: -7%;
+    overflow: hidden;
+    
 }
 
 footer h1 {
-    color: #ffffff;
+    margin-left: 2%;
+    color: #000000;
     text-align: center;
-    font-size: clamp(9px, 5vw, 16px);
-    padding: 20px;
-}
-
-footer h2 {
-    color: #ffffff;
-    text-align: center;
-    font-size: clamp(9px, 5vw, 16px);
+    font-size:small;
     padding: 20px;
     font-weight: bold;
     font-family:Verdana, Geneva, Tahoma, sans-serif
