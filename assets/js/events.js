@@ -1,7 +1,4 @@
 
-
-
-
 //IR A LA SECCION A TRAVES DE LOS ENLACES DEL MENU
 
 // Seleccionar todos los enlaces del menú
@@ -33,3 +30,23 @@ window.addEventListener('pageshow', function(event) {
   }
 });
 
+//funcion para mostrar y ocultar el menu haciendo click en el boton hamburguesa
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav');
+
+  if (toggleButton && navMenu) {
+    toggleButton.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    const menuLinks = navMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+});

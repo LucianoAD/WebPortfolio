@@ -1,23 +1,26 @@
-.wave {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 0;
-    left: 0;
-    background: url("../img/backgrounds/wave.png");
-    animation: animate 20s linear infinite;
-    box-sizing:0px;
+
+.svg-rotated {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-top: -3px;
 }
 
-.top-wave .shape-fill {
-   fill: black;
-   width: 5px;
-   margin: 0%;
-   padding: 0%;
+.svg-vertical {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  margin-bottom: -3px;
 }
 
-.svg-invertido {
-    transform: scaleY(-1);
-    margin-bottom: -1px;
+.wave-container {
+  line-height: 0;
+
 }
 
+svg {
+    vertical-align: bottom; /* O prueba con top o middle */
+}

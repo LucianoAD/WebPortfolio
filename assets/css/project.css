@@ -167,6 +167,7 @@ header{
     text-align: justify;
     line-height: 1.6;
     margin: 70px 60px 0px 60px; 
+    position: absolute;
 }
 
 h1 {

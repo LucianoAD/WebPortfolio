@@ -4,12 +4,12 @@
             "id": "metagenomes",
             "nombre": "Metagenome Data Analysis",
             "ruta": "./assets/img/metagenomes.jpg",
-            "url": "project_1.html"
+            "url": "projects/project_1.html"
         },
-        { "id": "tumor", "nombre": "Transcriptomic Data Analysis", "ruta": "./assets/img/tumor.jpg", "url":"project_2.html" },
-        { "id": "survival", "nombre": "Patient Clinical Data Analysis", "ruta": "./assets/img/survival.jpg", "url":"" },
-        { "id": "repositioning", "nombre": "Experimental Data Analysis","ruta": "./assets/img/repositioning.jpg", "url":"" },
-        { "id": "signature", "nombre": "Application of Machine Learning Techniques",  "ruta": "./assets/img/signature.jpg", "url":"" }
+        { "id": "tumor", "nombre": "Transcriptomic Data Analysis", "ruta": "./assets/img/tumor.jpg", "url":"projects/project_2.html" },
+        { "id": "survival", "nombre": "Patient Clinical Data Analysis", "ruta": "./assets/img/survival.jpg", "url":"projects/project_3.html" },
+        { "id": "repositioning", "nombre": "Experimental Data Analysis","ruta": "./assets/img/repositioning.jpg", "url":"projects/project_4.html" },
+        { "id": "signature", "nombre": "Application of Machine Learning Techniques",  "ruta": "./assets/img/signature.jpg", "url":"projects/project_5.html" }
     ],
 
     "course_taken": [
@@ -27,7 +27,7 @@
     },
     {"id": "Web Full Stack Junior",
         "imagen": "./assets/img/Courses/AP_FS.png",
-        "description":"For the final assignment of this course, I developed a dynamic portfolio. The backend, written in Java, was deployed on the Koyeb platform. The portfolio has a login functionality, which allows access to the editing mode. On the frontend side, the Angular framework was used to adapt it to a modular architecture. In addition, the design is responsive. The application data was stored in a MySQL database managed through Clever Cloud. You can see it ",
+        "description":"For the final project, I built a dynamic portfolio with a Java backend deployed on Koyeb. It includes login functionality to access edit mode. The frontend uses Angular in a modular architecture and is fully responsive. Data is stored in a MySQL database managed via Clever Cloud. Check it out ",
         "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd"
     },
     {"id": "Project Formulation for European Financing",
@@ -47,7 +47,7 @@
     },
     {"id": "Bioinformatics and the central dogma of biology",
     "imagen": "./assets/img/Courses/Bioinf.png",
-    "description":"In this course, explore the use of bioinformatics applications for genomics, transcriptomics, and preoteomics.",
+    "description":"In this course, I explored the use of bioinformatics applications for genomics, transcriptomics, and proteomics.",
     "url":""
     },
     {"id": "Design and execution of biological tests applied to biomedicine",
@@ -75,7 +75,7 @@
     {
             "id": "Bioinformatics: applications in genomic medicine",
             "imagen": "./assets/img/Courses/curse1.png",
-            "description":"I taught this postgraduate course as an elective subject for the Doctorate in Biomedical Sciences of National University of Rosario, Argentina. The course includes concepts on omics sciences, information on databases, and tools for genomic data analysis.",
+            "description":"Covering genomic databases, NGS technologies, gene expression analysis, and the role of bioinformatics in personalized medicine and drug discovery.",
             "url":""
     },
     {
@@ -99,20 +99,32 @@
     {
         "id": "Data Science Fundamentals",
         "imagen": "./assets/img/Courses/curse3.png",
-        "description":"In the course Foundations of Data Science, we teach students how to develop efficient workflows for analyzing various types of data. Additionally, we train them in interpreting and visualizing results through clear and accessible graphical representations, designed to facilitate understanding for general, non-technical audiences",
-        "url":""
+        "description":"We teach students to build efficient data analysis workflows in Python and to effectively communicate results to non-technical audiences. You can see our webbook",
+        "url":"https://tuiafceiaunr.github.io/fdcd/README.html"
     }, 
     {
         "id": "Introduction to artificial intelligence",
         "imagen": "./assets/img/Courses/curse3.png",
-        "description":"In the course Foundations of Data Science, we teach students how to develop efficient workflows for analyzing various types of data. Additionally, we train them in interpreting and visualizing results through clear and accessible graphical representations, designed to facilitate understanding for general, non-technical audiences",
+        "description":"Introduced students to the theoretical foundations of artificial intelligence, including types of learning, model parameters, evaluation metrics, and current ethical regulations.",
         "url":""
     },
     {
         "id": "Programming environment",
         "imagen": "./assets/img/Courses/curse3.png",
-        "description":"In this course we teach students basic Linux commands, Bash programming, and basic programming tools such as Git, GitHub, and Docker,",
+        "description":"In this course we teach students basic Linux commands, Bash programming, and basic programming tools such as Git, GitHub, and Docker.",
         "url":""
+    },
+    {
+        "id": "Introduction to R Programming",
+        "imagen": "./assets/img/Courses/FCE.png",
+        "description":"Teach students how to use the R environment and introduce basic programming concepts. You can view our webbook",
+        "url":"https://ee-unr.github.io/programacion-1/"
+    },
+    {
+        "id": "Programming II",
+        "imagen": "./assets/img/Courses/FCE.png",
+        "description":"Teach students how to use the R environment and introduce basic programming concepts. You can view our webbook",
+        "url":"https://ee-unr.github.io/programacion-1/"
     }
         
     ],
@@ -121,8 +133,12 @@
     { "name": "II International Congress of Science and Technology of Laboratory Animals", "year": "2021", "place":"Argentina", "issue":"In vivo models for cancer studies", "participation":"author", "url":"./assets/img/Congresses/AACYTAL.pdf"},
     { "name": "III Annual Meeting of the Ibero-American Artificial Intelligence Network for Big BioData", "year": "2023", "place":"Argentina", "issue":"AI in Biology and Health", "participation":"author oral presenter", "url":"./assets/img/Congresses/ICB2C_BookAbstract.pdf"},
     { "name": "18th World Congress on Cancers of the Skin", "year": "2022", "place":"Argentina", "issue":"Bioinformatics", "participation":"co-author", "url":"./assets/img/Congresses/skincancer.pdf"},
-    { "name": "Latin-R", "year": "2023", "place":"Uruguay", "issue":"R programming applications", "participation":"co-author", "url":""},
-    { "name": "Argentine Society of Clinical Research Meeting", "year": "2024", "place":"Argentina", "issue":"Bioinformatics and Therapeutics Targets", "participation":"author whit special mention", "url":""}
+    { "name": "Latin-R", "year": "2023", "place":"Uruguay", "issue":"R programming applications", "participation":"co-author", "url":"https://github.com/LatinR/presentaciones-LatinR2023/tree/main?tab=readme-ov-file#dise%C3%B1o-de-un-flujo-de-investigaci%C3%B3n-usando-rbioconductor-para-el-estudio-del-melanoma-cut%C3%A1neo"},
+    { "name": "Argentine Society of Clinical Research Meeting", "year": "2024", "place":"Argentina", "issue":"Bioinformatics and Therapeutics Targets", "participation":"author whit special mention", "url":""},
+    { "name": "11th International Congress of Internal Medicine", "year": "2025", "place":"Rosario, Argentina", "issue":"Artificial intelligence for biomedical data analysis", "participation":"Member of the Scientific Review Committee", "url":"./assets/img/Congresses/cidm.pdf"},
+    { "name": "14th Health Congress of the Municipality of Rosario", "year": "2025", "place":"Rosario, Argentina", "issue":"Artificial intelligence applied to health", "participation":"Speaker", "url":"./assets/img/Congresses/salud.pdf"}
+
+
 ],
 
     "awards": [

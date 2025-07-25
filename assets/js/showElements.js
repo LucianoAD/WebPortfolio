@@ -286,7 +286,7 @@ function showConferenceCarousel(year, conferences, container) {
         link.href = conf.url;
         link.target = "_blank";
         link.classList.add("conference-link");
-        link.innerText = "About the work presented";
+        link.innerText = "View my participation";
 
         details.appendChild(link);
         item.appendChild(title);
