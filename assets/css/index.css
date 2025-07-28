@@ -9,6 +9,7 @@
 
 /*==================================================== FORMATO GENERAL=======================================================*/
 
+
 body {
     background-color: rgb(253, 253, 253);
     font-family: "Raleway", sans-serif;
@@ -34,10 +35,10 @@ main {
 }
 
 html {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
-*, ::after, ::before {
+*, *::before, *::after {
     box-sizing: inherit;
 }
 
@@ -45,6 +46,38 @@ body, html {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* GENERAL MEDIA QUERYS
+/* Tablet (mediano) */
+
+@media (max-width: 1024px) {
+
+.carta h1,
+.about h1,
+.meetings h1,
+.carta-light h1 {
+  font-size: 50px;
+  padding-bottom: 2%;
+}
+
+}
+@media (max-width: 768px) {
+.carta h1,
+.about h1,
+.meetings h1,
+.carta-light h1 {
+  font-size: 40px;
+  padding-bottom: 2%;
+}
+    
+
+}
+
+/* Móviles (chico) */
+@media (max-width: 480px) {
+
+}
+
 
 /*====================================================MENU=======================================================*/
 .padre {
@@ -433,7 +466,7 @@ header{
     }
 
     .banner_tex h2 {
-        font-size: clamp(20px, 8vw, 30px);
+        font-size: 45px;
     }
 
     .banner_tex h3 {
@@ -453,12 +486,6 @@ header{
     margin-top: -10%;
     margin-bottom: -5%;
     min-height: 500px;
-}
-
-.about_image img {
-    padding-top: 5px;
-    width: clamp(500px, 400vw, 400px);
-    border-radius: 50%;
 }
 
 .about_academic {
@@ -502,8 +529,6 @@ div.about_academic p {
     color: rgba(31, 26, 26, 0.904);
 }
 
-
-
 .tarjetas-container-titles{
     flex-grow: 1; /* Permite que este contenedor crezca y ocupe todo el espacio disponible */
     width: 72%; /* Asegura que ocupe todo el ancho */
@@ -528,38 +553,60 @@ div.about_academic p {
 }
 
 
-/*================================ ABOUT MEDIA QUERYS ========================================================/*
+/*================================ ABOUT MEDIA QUERYS ========================================================*/
+
+
 /* Tablet horizontal y más chico */
 
 @media (max-width: 1024px) {
 
-  .about {
+.about {
     flex-direction: column;
     margin-top: -2%;
-    margin-bottom: 5%;
-  }
-
-    .about_text {
-    margin: 0 auto;
-    width: 90%;
-   
-  }
-
-  .about_text p {
-    margin-left: 4%;
-    margin-right: 10%;
-    padding-bottom: 4%;
-  }
-
-  .about_academic{
-    margin: 0%;
-  }
-
- 
+    margin-bottom: 0.5%;
 }
+
+
+.about_text {
+    width: 90%;
+  }
+
+.about_text p {
+font-size: 30px;
+}
+
+div.about_academic{
+margin-top: 4%;
+}
+
+div.about_academic p {
+    font-size: 30px;
+  }
+.tarjetas-container-titles {
+    width: 600px;
+  }
+
+.tarjetas-container-titles .slick-prev::before, 
+.tarjetas-container-titles .slick-next::before {
+   font-size: 35px;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 10; /* asegúrate de que sea mayor que el z-index del slide */
+  position: absolute;
+}
+
+.slick-prev {
+    left: -8% !important; 
+  }
+
+}
+
 
 /* Celulares grandes */
 @media (max-width: 768px) {
+
   .about {
     display: flex;
     flex-direction: column;
@@ -571,68 +618,92 @@ div.about_academic p {
     padding: 0 20px;
   }
 
-  .about_text p {
-    font-size: 15px;
+  div.about_academic { 
+    width: 100%;
+    margin-bottom: -5%;
+    margin-top: 5%;
   }
 
-.tarjetas-container-titles .slick-slide {
- display: flex !important;
- justify-content: center;
-}
+  .about_text p {
+    font-size: 22px;
+  }
+
+   div.about_academic p {
+    font-size: 22px;
+  }
 
 .tarjetas-container-titles {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 0 0 -6%;
-    padding: 0%;
+    width: 520px;
   }
-
-  .tarjetas-container-titles .slick-track {
-    display: flex !important;
-    justify-content: center;
-  }
-
-  .tarjetas-container-titles .slick-slide > * {
-    width: 100% !important;
-    max-width: 280px;
-  }
-
 
 }
 
 /* Celulares chicos (tipo iPhone SE, Galaxy A, etc) */
+
 @media (max-width: 480px) {
-  .about h1 {
-    font-size: 26px;
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
+  .about_text {
+    width: 80%;
+    padding: 2%;
+    margin-right: 5%;
+  } 
+  
   .about_text p {
-    font-size: 14px;
-  }
- .about_text {
-    width: 95%;
-    padding: 5px 15px;
+    font-size: 18px;
+    margin: 0%;
   }
 
-.tarjetas-container-titles {
-    max-width: 250px;
-    margin: 0 0 0 -6%;
+  div.about_academic {
+    max-width: 800px !important; 
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: -5%;
   }
 
-div.about_academic p {
-  font-size: small;
-  margin-left: -5%;
+   div.about_academic p {
+    font-size: 18px;
+  }
+
+  .tarjetas-container-titles {
+    width: 290px;
+  }
+  
+.slick-prev,
+.slick-next {
+  z-index: 10; /* asegúrate de que sea mayor que el z-index del slide */
+  position: absolute;
+  font-size: 10px
 }
+  .slick-prev {
+    left: -5% !important; 
+  }
+
+  .slick-next {
+    right: -5.5% !important; 
+  }
+
+  .tarjetas-container-titles .slick-prev::before, 
+.tarjetas-container-titles .slick-next::before {
+   font-size: 20px;
+}
+
+
 }
 
 /*====================================================WORKS=======================================================*/
 .carta, .meetings {
-    align-items: center;
-    justify-content: center;
-    margin-top: -2px;
-    width: 100%;
-    background-color: #000000;
-    display:flex;
+align-items: center;
+justify-content: center;
+margin-top: -2px;
+width: 100%;
+background-color: #000000;
+display:flex;
 flex-direction: column;
 margin: 0 auto; /* Centra el contenedor de la carta */
 padding: 0;
@@ -728,6 +799,33 @@ padding: 0;
 background-color: transparent;   
 }
 
+.tarjeta-nombre {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 6px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 5;
+  background: transparent; 
+  color: #fff;    
+  margin-top: -5%;        
+}
+
+.tarjeta:hover .tarjeta-nombre {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #000;
+}
+
+
 /*color de los puntos inactivos */
 .slick-dots li button:before {
     background-color: white;
@@ -782,8 +880,69 @@ background-color: transparent;
       }
     }
 
+/*=============================================WORKS MEDIA QUERYS ==========================================*/
 
-@media (max-width: 429px) {
+@media (max-width: 1024px) {
+
+ .tarjeta-nombre {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative;
+    bottom: unset;
+    left: unset;
+    transform: none;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #000 !important;
+    margin-top: 8px;
+    font-size: 40px !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+  }
+
+  .tarjeta:hover .tarjeta-nombre {
+    /* Asegura que no cambie visual */
+    opacity: 1 !important;
+}
+
+  .tarjeta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+.tarjetas-container-projects {
+width: 650px;
+}
+
+.tarjetas-container-projects .slick-prev::before, 
+.tarjetas-container-projects .slick-next::before {
+   font-size: 35px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+.tarjeta-nombre {
+font-size: 30px !important;
+}
+
+.tarjetas-container-projects .slick-prev::before, 
+.tarjetas-container-projects .slick-next::before {
+   font-size: 20px;
+   z-index: 40;
+}
+
+.tarjeta-nombre {
+margin-top: -5%;
+}   
+}
+
+@media (max-width: 480px) {
     .tarjetas-container{
         margin-left: 12%;
     }
@@ -791,6 +950,13 @@ background-color: transparent;
     .carta, .meetings {
         padding-bottom: 70px;
     }
+
+    .tarjeta-nombre {
+font-size: 18px !important;
+margin-top: -6%;
+}
+
+    
 }
 
 
@@ -943,6 +1109,40 @@ background-color: transparent;
     color: #000;
     margin: 0;                  /* Eliminar márgenes para un ajuste más preciso */
 }
+
+/*==================================== CURSES MEDIA QUERYS =============================================*/
+
+@media (max-width: 1024px) {
+  .contenedor-cursos {
+    display: flex;
+    flex-direction: column; /* Cambia de fila a columna */
+    align-items: center;    /* Centra horizontalmente */
+    gap: 30px;              /* Espacio entre cursos */
+    width: 100%;
+  }
+
+  .container-curses_taken,
+  .container-curses_taught {
+    width: 70%;     /* Más ancho ahora que están apilados */
+    margin: 0 auto; /* Centrado horizontal */
+  }
+
+    .flip-card {
+    width: 100%;
+    height: 300px; /* Asegurate que tenga altura fija */
+    margin: 0 auto;
+  }
+
+  .flip-card-inner {
+    height: 100%;
+  }
+
+  .flip-card-front, .flip-card-back {
+    height: 100%;
+  }
+
+}
+
 
 /*====================== CONFERENCES ==================================================================*/
 

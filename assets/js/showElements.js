@@ -4,7 +4,13 @@ const tarjetasContainerCourseTaught = document.getElementById("tarjetas-containe
 const tarjetasContainerTitles = document.getElementById("tarjetas-container-titles");
 const tarjetasContainerConferences = document.getElementById("tarjetas-container-conferences");
 
-window.onload = function () { 
+window.onload = function () {
+    if (window.innerWidth < 1024) {
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.removeAttribute('data-aos');
+            el.removeAttribute('data-aos-duration');
+        });
+    } 
     fetch("carta.JSON")
         .then((response) => {
             if (!response.ok) {
@@ -104,8 +110,9 @@ window.onload = function () {
                 adaptiveHeight: false,
                 centerMode: false,
                 responsive: [
-                    { breakpoint: 768, settings: { slidesToShow: 2 } },
-                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                    { breakpoint: 1050, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
                 ]
             });
 
@@ -127,6 +134,10 @@ window.onload = function () {
             }).on('afterChange', function (event, slick, currentSlide) {
                 slick.$slider.slick('setPosition');
                 slick.$list.height(slick.$slides.eq(currentSlide).outerHeight(true));
+
+                $(window).on('resize orientationchange', function () {
+    $('.tarjetas-container-coursetaken, .tarjetas-container-coursetaught').slick('setPosition');
+});
             });
 
             $('.tarjetas-container-titles').slick({
@@ -137,7 +148,8 @@ window.onload = function () {
                 dots: false,
                 adaptiveHeight: false,
                 responsive: [
-                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    {breakpoint: 1024, settings: { slidesToShow: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } },
                     { breakpoint: 480, settings: { slidesToShow: 1 } }
                 ]
             });
