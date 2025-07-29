@@ -27,7 +27,7 @@
     },
     {"id": "Web Full Stack Junior",
         "imagen": "./assets/img/Courses/AP_FS.png",
-        "description":"For the final project, I built a dynamic portfolio with a Java backend deployed on Koyeb. It includes login functionality to access edit mode. The frontend uses Angular in a modular architecture and is fully responsive. Data is stored in a MySQL database managed via Clever Cloud. Check it out ",
+        "description":"Dynamic, responsive portfolio with Angular frontend and Java backend, deployed on Koyeb. Features secure login for edit mode and uses MySQL on Clever Cloud for data storage. Check it out ",
         "url":"https://github.com/LucianoAD/Portafolio_AP_LuAd"
     },
     {"id": "Project Formulation for European Financing",
@@ -52,12 +52,12 @@
     },
     {"id": "Design and execution of biological tests applied to biomedicine",
     "imagen": "./assets/img/Courses/Biomed.png",
-    "description":"I learned about experimental design, use of biological models and advanced molecular techniques, as well as data management and interpretation. I also explored good laboratory practices and the application of results in diagnostics, biomarker discovery and therapy development.",
+    "description":"Gained skills in experimental design, biological models, molecular techniques, data analysis, and lab practices, with applications in diagnostics, biomarkers, and therapy development.",
     "url":""
     },
     {"id": "Handling of laboratory animals",
     "imagen": "./assets/img/Courses/Animales.png",
-    "description":"I learned how to improve the design of an experiment to use the smallest number of animals possible and obtain sufficient results to corroborate a hypothesis. I also learned about the ethical regulations regarding their use.",
+    "description":"Learned to optimize experimental design for minimal animal use while ensuring valid results, and gained knowledge of ethical regulations governing their use.",
     "url":""
     },
     {"id": "Basic cell culture techniques and their applications in molecular biology",
@@ -81,7 +81,7 @@
     {
         "id": "Fundamentals of artificial intelligence and its regulatory framework in Italy",
         "imagen": "./assets/img/Courses/intro_IA.png",
-        "description":"This course was funded by the Italian government and aimed to educate the general public on basic concepts of AI and encourage critical thinking about its regulation and control. You can see the program ",
+        "description":"Funded by the Italian government and aimed to educate the general public on basic concepts of AI and encourage critical thinking about its regulation and control. You can see the program ",
         "url":"/assets/docs/CEI_IA.pdf"
     },
     {

@@ -988,7 +988,7 @@ margin-top: -6%;
    height: auto;
    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
    align-items: center;
-   overflow: hidden;
+   overflow: visible;
 }
 
 
@@ -1042,8 +1042,16 @@ margin-top: -6%;
     justify-items: center;
 }
 
+/*.flip-card:hover .flip-card-inner {
+/*    transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+/*}*/
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+}
+
+.flipped .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
 .flip-card-back {
@@ -1111,6 +1119,11 @@ margin-top: -6%;
 }
 
 /*==================================== CURSES MEDIA QUERYS =============================================*/
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
 
 @media (max-width: 1024px) {
   .contenedor-cursos {
@@ -1123,9 +1136,23 @@ margin-top: -6%;
 
   .container-curses_taken,
   .container-curses_taught {
-    width: 70%;     /* Más ancho ahora que están apilados */
-    margin: 0 auto; /* Centrado horizontal */
+    width: 80%;    
   }
+
+  .container-curses_taught{
+    margin-top: 10%;
+  }
+
+  .tarjetas-container-coursetaken,
+.tarjetas-container-coursetaught {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;      /* Apila las tarjetas verticalmente si hay más de una */
+  min-height: 250px; 
+}
+
 
     .flip-card {
     width: 100%;
@@ -1134,11 +1161,15 @@ margin-top: -6%;
   }
 
   .flip-card-inner {
-    height: 100%;
+    width: 100%;
   }
 
   .flip-card-front, .flip-card-back {
     height: 100%;
+  }
+
+  .flip-card-left h3 {
+    font-size: 15px;
   }
 
 }

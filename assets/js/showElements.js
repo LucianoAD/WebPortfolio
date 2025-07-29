@@ -242,10 +242,16 @@ function createFlipCard(course) {
     cardBack.appendChild(flipCardLeft);
     cardBack.appendChild(flipCardRight);
 
-    // Combinar todas las partes en la tarjeta
-    cardInner.appendChild(cardFront);
+     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
     flipCard.appendChild(cardInner);
+
+    // Para dispositivos sin soporte de hover, permitir el giro mediante clic
+    if (window.matchMedia('(hover: none)').matches) {
+        flipCard.addEventListener('click', () => {
+            flipCard.classList.toggle('flipped');
+        });
+    }
 
     return flipCard;
 }
