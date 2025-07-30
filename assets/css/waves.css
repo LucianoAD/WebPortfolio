@@ -6,6 +6,7 @@
   line-height: 0;
   transform: rotate(180deg);
   margin-top: -3px;
+
 }
 
 .svg-vertical {
@@ -14,6 +15,7 @@
   height: auto;
   line-height: 0;
   margin-bottom: -3px;
+
 }
 
 .wave-container {
@@ -22,5 +24,13 @@
 }
 
 svg {
-    vertical-align: bottom; /* O prueba con top o middle */
+    margin: 0%;
+    display: block;
+}
+
+.svg-rotated,
+.svg-vertical {
+  position: relative;
+  z-index: 9999;
+  pointer-events: none;
 }

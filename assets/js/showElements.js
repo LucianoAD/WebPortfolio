@@ -4,7 +4,8 @@ const tarjetasContainerCourseTaught = document.getElementById("tarjetas-containe
 const tarjetasContainerTitles = document.getElementById("tarjetas-container-titles");
 const tarjetasContainerConferences = document.getElementById("tarjetas-container-conferences");
 
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function () {
+     AOS.init(); 
     if (window.innerWidth < 1024) {
         document.querySelectorAll('[data-aos]').forEach(el => {
             el.removeAttribute('data-aos');
@@ -47,6 +48,7 @@ window.onload = function () {
             if (tarjetasContainerTitles && data.titles) {
                 data.titles.forEach((title) => {
                     const img = document.createElement("img");
+                    img.loading = "lazy";
                     img.src = title.image_url; 
                     tarjetasContainerTitles.appendChild(img);
                 });
@@ -156,7 +158,8 @@ window.onload = function () {
 
         })
         .catch((error) => console.error("Error al obtener los datos del archivo JSON:", error));
-};
+
+});
 
 function createTarjeta(data) {
     // Crear elementos HTML
@@ -204,6 +207,7 @@ function createFlipCard(course) {
     cardFront.classList.add("flip-card-front");
 
     const img = document.createElement("img");
+    img.loading = "lazy";
     img.src = course.imagen; // Ruta de la imagen desde JSON
     cardFront.appendChild(img);
 

@@ -42,9 +42,10 @@ html {
     box-sizing: inherit;
 }
 
-body, html {
-    overflow-x: hidden;
-    overflow-y: auto;
+html, body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* GENERAL MEDIA QUERYS
@@ -481,11 +482,12 @@ header{
 }
 /*====================================================ABOUT=======================================================*/
 .about {
-    align-items: center;
+align-items: center;
     justify-content: center;
-    margin-top: -10%;
-    margin-bottom: -5%;
-    min-height: 500px;
+    margin-top: -2%;
+    margin-bottom: 0%;
+    overflow: visible;
+    min-height: 400px;
 }
 
 .about_academic {
@@ -700,7 +702,7 @@ div.about_academic p {
 .carta, .meetings {
 align-items: center;
 justify-content: center;
-margin-top: -2px;
+margin-top: -4%;
 width: 100%;
 background-color: #000000;
 display:flex;
@@ -712,8 +714,6 @@ padding: 0;
 
 .titulocarta {
     text-align: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
 }
 
 .titulocarta-animacion {
@@ -745,9 +745,6 @@ padding: 0;
     max-width: 80%;
     align-items: center;
     margin: 0 auto; /* Centra el carrusel */
-}
-
-.tarjetas-container-projects {
     position: relative;
     margin: 0 auto;
 }
@@ -968,7 +965,7 @@ margin-top: -6%;
         margin-top: -7%;
         margin-bottom: -5%;
         overflow: visible;
-        min-height: 600px;
+        height: auto;
     }
 
 .titulocarta-ligth{
@@ -988,7 +985,8 @@ margin-top: -6%;
    height: auto;
    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
    align-items: center;
-   overflow: visible;
+    overflow-y: auto;
+   max-height: 500px;
 }
 
 
@@ -1004,6 +1002,11 @@ margin-top: -6%;
     font-family: "Kaushan Script", cursive;
     color: #864996;
     font-size: 30px;
+    margin-bottom: 1%;
+}
+
+.justify-content-between{
+  margin-bottom: 5%;
 }
 
 .slick-slide{
@@ -1042,9 +1045,6 @@ margin-top: -6%;
     justify-items: center;
 }
 
-/*.flip-card:hover .flip-card-inner {
-/*    transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
-/*}*/
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
@@ -1053,6 +1053,7 @@ margin-top: -6%;
 .flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
+
 
 .flip-card-back {
     width: 100%;
@@ -1064,7 +1065,7 @@ margin-top: -6%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    overflow: visible;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
 }
@@ -1302,7 +1303,6 @@ margin-top: -6%;
      Estilos de Slick (usar los valores por defecto)
   --------------------------------- */
   .conference-carousel-container .slick-list {
-    overflow: hidden;  /* Recorta cualquier contenido que sobresalga */
     margin: 0;
   }
   
@@ -1349,7 +1349,6 @@ margin-top: -6%;
     font-size: 15px;
     color: white;
     flex-grow: 1;
-    overflow: hidden;
     word-wrap: break-word;
   }
   
@@ -1385,7 +1384,6 @@ footer {
     background-color:#ffffff;
     bottom: 0%;
     margin-top: -7%;
-    overflow: hidden;
     
 }
 
@@ -1406,8 +1404,4 @@ footer h1 {
     }
 
 }
-
-
-
-
 
