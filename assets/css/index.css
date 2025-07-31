@@ -10,11 +10,6 @@
 /*==================================================== FORMATO GENERAL=======================================================*/
 
 
-body {
-    background-color: rgb(253, 253, 253);
-    font-family: "Raleway", sans-serif;
-}
-
 main {
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
@@ -26,26 +21,30 @@ main {
 .contact,
 .about,
 .meetings,
-.carta-light
- h1 {
+.carta-light h1 {
     text-align: center;
     font-family: "Kaushan Script", cursive;
     font-size: 40px;
     color: #f39422;
 }
 
+/* --- Reseteo y estilos base --- */
+
 html {
     box-sizing: border-box;
+    overflow-y: auto; /* Controla el scroll vertical principal */
 }
 
 *, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: inherit; /* Hereda el box-sizing del html */
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
+body {
+    background-color: rgb(253, 253, 253);
+    font-family: "Raleway", sans-serif;
+    overflow-x: hidden; /* Oculta cualquier scroll horizontal no deseado */
 }
 
 /* GENERAL MEDIA QUERYS
@@ -1404,4 +1403,3 @@ footer h1 {
     }
 
 }
-

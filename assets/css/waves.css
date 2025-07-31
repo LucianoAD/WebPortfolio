@@ -31,6 +31,5 @@ svg {
 .svg-rotated,
 .svg-vertical {
   position: relative;
-  z-index: 9999;
   pointer-events: none;
 }
