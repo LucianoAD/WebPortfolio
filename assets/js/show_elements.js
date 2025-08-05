@@ -4,16 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================
-   Inicialización de AOS
+   Inicialización de AOS con soporte responsive
 ============================ */
 const initAOS = () => {
-    AOS.init();
-    if (window.innerWidth < 1024) {
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            el.removeAttribute('data-aos');
-            el.removeAttribute('data-aos-duration');
-        });
-    }
+    const applyAOS = () => {
+        if (window.innerWidth >= 1024) {
+            AOS.init();
+        } else {
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                el.removeAttribute('data-aos');
+                el.removeAttribute('data-aos-duration');
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+        }
+    };
+
+    applyAOS();
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(applyAOS, 200);
+    });
 };
 
 /* ============================
@@ -26,16 +39,27 @@ const fetchJSON = async (url) => {
 };
 
 /* ============================
+   Precarga de imágenes
+============================ */
+const preloadImage = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = src;
+});
+
+/* ============================
    Render de datos
 ============================ */
-const renderData = ({ project, course_taken, course_taught, titles, conferences }) => {
-    appendElements('.tarjetas-container-projects', project, createTarjeta);
-    appendElements('.tarjetas-container-coursetaken', course_taken, createFlipCard);
-    appendElements('.tarjetas-container-coursetaught', course_taught, createFlipCard);
-    appendElements('.tarjetas-container-titles', titles, ({ image_url }) => {
-        const img = createEl('img', { loading: 'lazy', src: image_url });
-        return img;
-    });
+const renderData = async ({ project, course_taken, course_taught, titles, conferences }) => {
+    await appendElementsWithPreload('.tarjetas-container-projects', project, createTarjeta);
+    await appendElementsWithPreload('.tarjetas-container-coursetaken', course_taken, createFlipCard);
+    await appendElementsWithPreload('.tarjetas-container-coursetaught', course_taught, createFlipCard);
+
+    appendElements('.tarjetas-container-titles', titles, ({ image_url }) =>
+        createEl('img', { src: image_url, alt: 'Título' }) // sin lazy para que cargue rápido
+    );
+
     renderConferences(conferences, '.tarjetas-container-conferences');
     initSlickSliders();
 };
@@ -60,6 +84,18 @@ const appendElements = (selector, data, creator) => {
     }
 };
 
+const appendElementsWithPreload = async (selector, data, creator) => {
+    const container = document.querySelector(selector);
+    if (container && data?.length) {
+        for (const item of data) {
+            if (item.ruta || item.imagen) {
+                await preloadImage(item.ruta || item.imagen);
+            }
+            container.appendChild(creator(item));
+        }
+    }
+};
+
 /* ============================
    Tarjetas y Flip Cards
 ============================ */
@@ -68,15 +104,19 @@ const createTarjeta = ({ url, ruta, nombre }) => createEl(
     { className: 'tarjeta', dataset: { url } },
     createEl('div', { className: 'tarjeta-luz' }),
     createEl('div', { className: 'tarjeta-punto' }),
-    createEl('img', { src: ruta, alt: nombre }),
-    createEl('button', { className: 'tarjeta-nombre', textContent: nombre, onclick: () => window.location.href = url })
+    createEl('img', { src: ruta, alt: nombre }), // sin lazy
+    createEl('button', {
+        className: 'tarjeta-nombre',
+        textContent: nombre,
+        onclick: () => window.location.href = url
+    })
 );
 
 const createFlipCard = ({ imagen, id, description, url }) => {
     const flipCard = createEl('div', { className: 'flip-card' });
 
     const cardFront = createEl('div', { className: 'flip-card-front' },
-        createEl('img', { loading: 'lazy', src: imagen })
+        createEl('img', { src: imagen, alt: id }) // sin lazy
     );
 
     const flipCardLeft = createEl('div', { className: 'flip-card-left' },
@@ -141,7 +181,12 @@ const showConferenceCarousel = (year, conferences, container) => {
         const details = createEl('p', { className: 'conference-details', innerHTML: detailsHTML });
 
         if (url) {
-            details.appendChild(createEl('a', { href: url, target: '_blank', className: 'conference-link', textContent: 'View my participation' }));
+            details.appendChild(createEl('a', {
+                href: url,
+                target: '_blank',
+                className: 'conference-link',
+                textContent: 'View my participation'
+            }));
         }
 
         const item = createEl('div', { className: 'conference-item' },
@@ -175,7 +220,8 @@ const adjustGlobalSlideHeights = () => {
 };
 
 const setActiveYear = (year) => {
-    document.querySelectorAll('.timeline-point, .timeline-label').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.timeline-point, .timeline-label')
+        .forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.timeline-label')
         .forEach(label => label.textContent === String(year) && label.classList.add('active'));
 };
