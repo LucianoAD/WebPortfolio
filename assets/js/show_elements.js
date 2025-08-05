@@ -4,29 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================
-   Inicialización de AOS con soporte responsive
+   Inicialización de AOS
 ============================ */
 const initAOS = () => {
-    const applyAOS = () => {
-        if (window.innerWidth >= 1024) {
-            AOS.init();
-        } else {
-            document.querySelectorAll('[data-aos]').forEach(el => {
-                el.removeAttribute('data-aos');
-                el.removeAttribute('data-aos-duration');
-                el.style.opacity = '1';
-                el.style.transform = 'none';
-            });
-        }
-    };
-
-    applyAOS();
-
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(applyAOS, 200);
-    });
+    AOS.init();
+    if (window.innerWidth < 1024) {
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.removeAttribute('data-aos');
+            el.removeAttribute('data-aos-duration');
+        });
+    }
 };
 
 /* ============================
