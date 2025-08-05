@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             el.removeAttribute('data-aos');
             el.removeAttribute('data-aos-duration');
         });
-    } 
+
     fetch("carta.JSON")
         .then((response) => {
             if (!response.ok) {
@@ -159,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch((error) => console.error("Error al obtener los datos del archivo JSON:", error));
 
-});
+}});
+
 
 function createTarjeta(data) {
     // Crear elementos HTML
