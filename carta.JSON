@@ -51,12 +51,12 @@
     "url":""
     },
     {"id": "Design and execution of biological tests applied to biomedicine",
-    "imagen": "./assets/img/Courses/Biomed.png",
+    "imagen": "./assets/img/Courses/biomed.png",
     "description":"Gained skills in experimental design, biological models, molecular techniques, data analysis, and lab practices, with applications in diagnostics, biomarkers, and therapy development.",
     "url":""
     },
     {"id": "Handling of laboratory animals",
-    "imagen": "./assets/img/Courses/Animales.png",
+    "imagen": "./assets/img/Courses/animales.png",
     "description":"Learned to optimize experimental design for minimal animal use while ensuring valid results, and gained knowledge of ethical regulations governing their use.",
     "url":""
     },
