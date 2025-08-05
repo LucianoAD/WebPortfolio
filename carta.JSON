@@ -115,7 +115,7 @@
         "url":""
     },
     {
-        "id": "Introduction to R Programming",
+        "id": "Programming I",
         "imagen": "./assets/img/Courses/FCE.png",
         "description":"Teach students how to use the R environment and introduce basic programming concepts. You can view our webbook",
         "url":"https://ee-unr.github.io/programacion-1/"
@@ -123,8 +123,8 @@
     {
         "id": "Programming II",
         "imagen": "./assets/img/Courses/FCE.png",
-        "description":"Teach students how to use the R environment and introduce basic programming concepts. You can view our webbook",
-        "url":"https://ee-unr.github.io/programacion-1/"
+        "description":"Teach students how to use the Pyhton and introduce basic programming concepts. You can view our webbook",
+        "url":"https://ee-unr.github.io/programacion-2/"
     }
         
     ],
