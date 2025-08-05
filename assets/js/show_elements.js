@@ -4,32 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================
-   Inicialización de AOS con soporte responsive y fix para Android
+   Inicialización de AOS con soporte responsive
 ============================ */
 const initAOS = () => {
     const applyAOS = () => {
         if (window.innerWidth >= 1024) {
-            // Desktop → inicializa normalmente
             AOS.init();
         } else {
-            // Móvil → inicializa AOS para que quite estilos ocultos
-            AOS.init({ disable: false });
-
-            // Luego quitamos animaciones y forzamos visibilidad
-            setTimeout(() => {
-                document.querySelectorAll('[data-aos]').forEach(el => {
-                    el.removeAttribute('data-aos');
-                    el.removeAttribute('data-aos-duration');
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
-                });
-            }, 50);
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                el.removeAttribute('data-aos');
+                el.removeAttribute('data-aos-duration');
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
         }
     };
 
     applyAOS();
 
-    // Reaplicar si cambia el tamaño de ventana
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -65,7 +57,7 @@ const renderData = async ({ project, course_taken, course_taught, titles, confer
     await appendElementsWithPreload('.tarjetas-container-coursetaught', course_taught, createFlipCard);
 
     appendElements('.tarjetas-container-titles', titles, ({ image_url }) =>
-        createEl('img', { src: image_url, alt: 'Título' })
+        createEl('img', { src: image_url, alt: 'Título' }) // sin lazy para que cargue rápido
     );
 
     renderConferences(conferences, '.tarjetas-container-conferences');
@@ -124,7 +116,7 @@ const createFlipCard = ({ imagen, id, description, url }) => {
     const flipCard = createEl('div', { className: 'flip-card' });
 
     const cardFront = createEl('div', { className: 'flip-card-front' },
-        createEl('img', { src: imagen, alt: id })
+        createEl('img', { src: imagen, alt: id }) // sin lazy
     );
 
     const flipCardLeft = createEl('div', { className: 'flip-card-left' },
