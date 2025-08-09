@@ -629,7 +629,7 @@ div.about_academic p {
   }
 
   div.about_academic { 
-    width: 100%;
+    width: 80%;
     margin-bottom: -5%;
     margin-top: 5%;
   }
@@ -652,10 +652,11 @@ div.about_academic p {
 
 @media (max-width: 480px) {
 
-  .about {
+  .about-me {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .about_text {
@@ -670,8 +671,7 @@ div.about_academic p {
   }
 
   div.about_academic {
-    max-width: 800px !important; 
-    width: 100%;
+    width: 80%;
     margin-top: 10%;
     margin-bottom: -5%;
   }
