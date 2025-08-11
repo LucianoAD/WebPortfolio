@@ -241,6 +241,19 @@ function createFlipCard(course) {
     description.innerHTML = descriptionText;
     flipCardRight.appendChild(description);
 
+    const link = description.querySelector('a');
+if (link) {
+  // Detiene la propagación del CLICK (para computadora)
+  link.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+
+  // Detiene la propagación del TOUCH (para celular)
+  link.addEventListener('touchstart', (event) => {
+    event.stopPropagation();
+  });
+}
+
     cardBack.append(flipCardLeft, flipCardRight);
     cardInner.append(cardFront, cardBack);
     flipCard.appendChild(cardInner);
