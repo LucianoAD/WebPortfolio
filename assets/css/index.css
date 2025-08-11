@@ -1260,6 +1260,8 @@ margin-top: -6%;
     width: 100%;
    }
 
+  
+
 }
 @media (max-width: 480px) {
 
@@ -1271,6 +1273,10 @@ margin-top: -6%;
 .flip-card-back p  { 
     font-size: 10px;
     width: 100%;
+   }
+
+   .flip-card-front img {
+    border-radius: 12%;
    }
 
 }

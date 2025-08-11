@@ -82,7 +82,7 @@
         "id": "Fundamentals of artificial intelligence and its regulatory framework in Italy",
         "imagen": "./assets/img/Courses/intro_IA.png",
         "description":"Funded by the Italian government and aimed to educate the general public on basic concepts of AI and encourage critical thinking about its regulation and control. You can see the program ",
-        "url":"/assets/docs/CEI_IA.pdf"
+        "url":"./assets/docs/CEI_IA.pdf"
     },
     {
         "id": "Molecular Pathology",
@@ -93,7 +93,7 @@
     {
         "id": "Databases 1",
         "imagen": "./assets/img/Courses/curse3.png",
-        "description":"In this course, we introduce students to the fundamental concepts of the relational data model and provide practical training in SQL for designing, querying, and managing databases. Our approach combines theory and practical applications to develop essential data management skills",
+        "description":"In this course, we introduce students to the fundamental concepts of the relational data model and provide practical training in SQL for designing, querying, and managing databases.",
         "url":""
     },
     {
