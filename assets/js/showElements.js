@@ -245,11 +245,17 @@ function createFlipCard(course) {
     cardInner.append(cardFront, cardBack);
     flipCard.appendChild(cardInner);
 
-    if (window.matchMedia('(hover: none)').matches) {
-        flipCard.addEventListener('click', () => {
-            flipCard.classList.toggle('flipped');
-        });
-    }
+   const handleFlip = (event) => {
+  // Previene que se dispare el evento 'click' justo después del 'touchstart'
+  if (event.type === 'touchstart') {
+    event.preventDefault();
+  }
+  flipCard.classList.toggle('flipped');
+};
+
+// Asignamos los listeners
+flipCard.addEventListener('click', handleFlip);
+flipCard.addEventListener('touchstart', handleFlip);
 
     return flipCard;
 }

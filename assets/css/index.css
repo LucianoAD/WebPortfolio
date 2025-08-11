@@ -71,19 +71,20 @@ body {
     overflow-y: auto;
 
 }
-.carta h1,
-.about h1,
-.meetings h1,
-.carta-light h1 {
-  font-size: 40px;
-  padding-bottom: 2%;
-}
-    
+
 
 }
 
 /* Móviles (chico) */
 @media (max-width: 480px) {
+
+.carta h1,
+.about h1,
+.meetings h1,
+.carta-light h1 {
+  font-size: 35px;
+  padding-bottom: 2%;
+}
 
 }
 
@@ -250,7 +251,7 @@ header{
 
 
 /* Dispositivos medianos (580px–770px) */
-@media (min-width: 580px) and (max-width: 770px) {
+@media (min-width: 580px) and (max-width: 820px) {
 
   header .menu {
     justify-content: center;
@@ -469,7 +470,7 @@ header{
 }
 
 /* Móviles (chico) */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .banner img {
         width: 200px;
     }
@@ -570,45 +571,40 @@ div.about_academic p {
 
 @media (max-width: 1024px) {
 
-.about {
+ .about {
+    display: flex;
     flex-direction: column;
-    margin-top: -2%;
-    margin-bottom: 0.5%;
-}
+    text-align: center;
+  }
 
+  .about-me{
+    width: 80%;
+    align-items: center;
+  }
 
-.about_text {
+  .about_text {
     width: 90%;
+ 
   }
 
-.about_text p {
-font-size: 30px;
-}
-
-div.about_academic{
-margin-top: 4%;
-}
-
-div.about_academic p {
-    font-size: 30px;
-  }
-.tarjetas-container-titles {
-    width: 600px;
+  div.about_academic { 
+    width: 80%;
+    margin-bottom: -5%;
+    margin-top: 5%;
+    margin-left: 10%;
   }
 
-.tarjetas-container-titles .slick-prev::before, 
-.tarjetas-container-titles .slick-next::before {
-   font-size: 35px;
-}
+  .about_text p {
+    font-size: 22px;
+    margin: 0%;
+  }
 
-.slick-prev,
-.slick-next {
-  z-index: 10; /* asegúrate de que sea mayor que el z-index del slide */
-  position: absolute;
-}
+   div.about_academic p {
+    font-size: 22px;
+  }
 
-.slick-prev {
-    left: -8% !important; 
+  .slick-prev {
+    left: -5%; 
   }
 
 }
@@ -623,87 +619,72 @@ div.about_academic p {
     text-align: center;
   }
 
-  .about_text {
-    width: 90%;
-    padding: 0 20px;
-  }
-
-  div.about_academic { 
-    width: 80%;
-    margin-bottom: -5%;
-    margin-top: 5%;
-  }
-
-  .about_text p {
-    font-size: 22px;
-  }
-
-   div.about_academic p {
-    font-size: 22px;
-  }
-
-.tarjetas-container-titles {
-    width: 520px;
-  }
-
-}
-
-/* Celulares chicos (tipo iPhone SE, Galaxy A, etc) */
-
-@media (max-width: 480px) {
-
-  .about-me {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  .about-me{
+    width: 70%;
     align-items: center;
   }
 
   .about_text {
-    width: 80%;
-    padding: 2%;
-    margin-right: 5%;
-  } 
-  
+    width: 90%;
+ 
+  }
+
+  div.about_academic { 
+    width: 90%;
+    margin-bottom: -5%;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+
   .about_text p {
-    font-size: 18px;
+    font-size: 22px;
     margin: 0%;
   }
 
-  div.about_academic {
-    width: 80%;
-    margin-top: 10%;
-    margin-bottom: -5%;
-  }
-
    div.about_academic p {
-    font-size: 18px;
+    font-size: 22px;
   }
 
+  .slick-prev {
+    left: -10%; 
+  }
+
+}
+
+
+/* Celulares chicos (tipo iPhone SE, Galaxy A, etc) */
+
+/* Celulares chicos (480px) */
+@media (max-width: 480px) {
+  .about-me {
+    width: 100%;
+    align-items: center;
+  }
+
+  .about_text p {
+    font-size: 18px;
+    margin: 3%;
+  }
   .tarjetas-container-titles {
-    width: 290px;
+    width: 290px; /* Ajustar el carrusel para pantallas muy pequeñas */
+    margin: 0 auto;
+    margin-bottom: 5%;
   }
   
-.slick-prev,
-.slick-next {
-  z-index: 10; /* asegúrate de que sea mayor que el z-index del slide */
-  position: absolute;
-  font-size: 10px
-}
-  .slick-prev {
-    left: -5% !important; 
+  /* Posición de los BOTONES */
+  .tarjetas-container-titles .slick-prev {
+    left: -20px !important;
+    z-index: 10;
+  }
+  .tarjetas-container-titles .slick-next {
+    right: -20px !important;
   }
 
-  .slick-next {
-    right: -5.5% !important; 
+  /* Tamaño de los ÍCONOS (las flechas) */
+  .tarjetas-container-titles .slick-prev::before,
+  .tarjetas-container-titles .slick-next::before {
+    font-size: 20px !important; /* Hacemos las flechas más pequeñas */
   }
-
-  .tarjetas-container-titles .slick-prev::before, 
-.tarjetas-container-titles .slick-next::before {
-   font-size: 20px;
-}
-
-
 }
 
 /*====================================================WORKS=======================================================*/
@@ -919,49 +900,90 @@ background-color: transparent;
     text-align: center;
   }
 
-.tarjetas-container-projects {
-width: 650px;
-}
 
 .tarjetas-container-projects .slick-prev::before, 
 .tarjetas-container-projects .slick-next::before {
    font-size: 35px;
 }
 
+.tarjetas-container-projects{
+ max-width: 50%;
+ margin:0%
 }
-
-@media (max-width: 768px) {
-
-.tarjeta-nombre {
-font-size: 30px !important;
-}
-
 .tarjetas-container-projects .slick-prev::before, 
 .tarjetas-container-projects .slick-next::before {
-   font-size: 20px;
+   font-size: 40px;
    z-index: 40;
 }
 
 .tarjeta-nombre {
 margin-top: -5%;
-}   
+}  
+
+.titulocarta{
+margin-bottom: 0% !important;
+}
+
+.slick-prev {
+        left: -10% !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+.tarjeta-nombre {
+font-size: 20px !important;
+}
+
+.tarjetas-container-projects{
+ max-width: 60%;
+}
+.tarjetas-container-projects .slick-prev::before, 
+.tarjetas-container-projects .slick-next::before {
+   font-size: 50px;
+   z-index: 40;
+}
+
+.tarjeta-nombre {
+margin-top: -5%;
+}  
+
+.titulocarta{
+margin-bottom: 0% !important;
+}
+
+.slick-prev {
+        left: -13% !important;
+    }
 }
 
 @media (max-width: 480px) {
-    .tarjetas-container{
-        margin-left: 12%;
-    }
 
-    .carta, .meetings {
-        padding-bottom: 70px;
-    }
+.tarjetas-container-projects{
+ max-width: 90%;
+}
 
-    .tarjeta-nombre {
+
+.tarjeta-nombre {
 font-size: 18px !important;
 margin-top: -6%;
 }
 
+.tarjetas-container-projects .slick-prev::before, 
+.tarjetas-container-projects .slick-next::before {
+   font-size: 14px;
+   z-index: 40;
     
+}
+
+.slick-prev {
+        left: -2% !important;
+    }
+
+.slick-next {
+       right: -2% !important;
+    }
 }
 
 
@@ -1034,13 +1056,16 @@ margin-top: -6%;
     box-sizing: border-box;
 }
 
-.flip-card-front img,
-.flip-card-back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Asegura que la imagen ocupe el área sin deformarse */
-    border-radius: 10px;
+/* Frente: mostrar todo el certificado sin recortar */
+.flip-card-front img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;  
+  border-radius: 2%;        
+  padding: 0;            
 }
+
 
 .flip-card-inner {
     width: 90%;
@@ -1054,14 +1079,17 @@ margin-top: -6%;
 }
 
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
-}
-
+/* La tarjeta solo gira si tiene la clase .flipped */
 .flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
+/* Solo aplica el giro con hover en dispositivos con mouse */
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
 
 .flip-card-back {
     width: 100%;
@@ -1069,13 +1097,12 @@ margin-top: -6%;
     position: absolute;
     top: 0;
     left: 0;
-    backface-visibility: hidden; /* Oculta el reverso al frente */
+    backface-visibility: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: visible;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    border-radius: 2%;
 }
 
 .flip-card-front {
@@ -1085,7 +1112,8 @@ margin-top: -6%;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    box-shadow: none;
+    border: none;
 }
 
 .flip-card-back {
@@ -1094,30 +1122,31 @@ margin-top: -6%;
     color: #333;
     display: flex;           
     padding: 10px;
+    width: 100%;
 }
 
 .flip-card-left {
-    background-color: #fcf3cf;  /* Color de fondo para la mitad izquierda */
-    flex: 3;                    /* Esto hace que ocupe la mitad del espacio disponible */
-    display: flex;              /* Flexbox para alineación interna */
-    justify-content: center;    /* Centrar contenido horizontalmente */
-    align-items: center;        /* Centrar contenido verticalmente */
+    background-color: #fcf3cf; 
+    flex: 3;                    
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
     height: 100%;
+    padding: 2%;
 }
 
 .flip-card-right {
-    background-color: #fff;     /* Color de fondo para la mitad derecha */
-    flex: 7;                    /* Esto hace que ocupe la otra mitad del espacio disponible */
-    display: flex;              /* Flexbox para alineación interna */
-    justify-content: center;    /* Centrar contenido horizontalmente */
-    align-items: center;        /* Centrar contenido verticalmente */
-    padding-left: 10px;         /* Ajusta el padding a tu gusto */
+    background-color: #fff;    
+    flex: 7;                    
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    padding-left: 10px;         
 }
 
 .flip-card-back h3 {
     font-size: 18px;
-    font-weight: bold;
-    margin: 0;                  /* Eliminar márgenes para un ajuste más preciso */
+    font-weight: bold;        
 }
 
 .flip-card-back p {
@@ -1136,68 +1165,113 @@ margin-top: -6%;
 /*==================================== CURSES MEDIA QUERYS =============================================*/
 
 @media (hover: hover) {
-    .flip-card:hover .flip-card-inner {
+
+.flip-card:hover .flip-card-inner {
         transform: rotateY(180deg);
     }
 }
 
 @media (max-width: 1024px) {
-  
+
   .contenedor-cursos {
     display: flex;
-    flex-direction: column; /* Cambia de fila a columna */
-    align-items: center;    /* Centra horizontalmente */
-    gap: 30px;              /* Espacio entre cursos */
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     width: 100%;
+    height: auto;
   }
 
   .container-curses_taken,
   .container-curses_taught {
-    width: 80%;    
+    width: 80%;
+    height: auto;
+    overflow: visible;   
+    max-height: none;    
   }
 
-  .container-curses_taught{
-    margin-top: 10%;
-  }
+  .container-curses_taught { margin-top: 10%; }
 
-.tarjetas-container-coursetaken,
-.tarjetas-container-coursetaught {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  flex-direction: column;      /* Apila las tarjetas verticalmente si hay más de una */
-  min-height: 250px; 
-}
-
-
-    .flip-card {
-    width: 100%;
-    height: 300px; /* Asegurate que tenga altura fija */
+  .tarjetas-container-coursetaken,
+  .tarjetas-container-coursetaught {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .flip-card {
+    width: 100%;
+    height: auto;        
+    margin: 0 auto 24px;
   }
 
   .flip-card-inner {
     width: 100%;
+    aspect-ratio: 16 / 10; 
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
   }
 
-  .flip-card-front, .flip-card-back {
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    inset: 0;              /* ocupa todo el inner sin desbordes */
+    width: 100%;
     height: 100%;
+    overflow: hidden;      
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .flip-card-left h3 {
-    font-size: 10px;
-    padding:2%;
-  }
-
-  .flip-card-back p{
-    font-size: 10px;
-  }
+  .flip-card-back {
+  width: 90% !important;   /* Hacemos la parte trasera un poco más angosta */
+  border-radius: 8px;      /* Redondeamos los bordes */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añadimos una sombra para que resalte */
+  margin-left: 6%;
 
 }
 
+  .flip-card-left h3 { font-size: 18px; padding: 2%; }
+  .flip-card-back p  { 
+    font-size: 20px;
+    width: 70%;
+   }
+}
 
-/*====================== CONFERENCES ==================================================================*/
+
+@media (max-width: 768px){
+
+  .flip-card-left h3 { 
+  font-size: 20px; 
+  padding: 2%; 
+}
+
+.flip-card-back p  { 
+    font-size: 16px;
+    width: 100%;
+   }
+
+}
+@media (max-width: 480px) {
+
+.flip-card-left h3 { 
+  font-size: 12px; 
+  padding: 2%; 
+}
+
+.flip-card-back p  { 
+    font-size: 10px;
+    width: 100%;
+   }
+
+}
+
+/*============================================= CONFERENCES ===========================================*/
 
 .titulocarta {
   margin-bottom: 8%;
@@ -1301,16 +1375,15 @@ margin-top: -6%;
 }
 
 
-
 /* -------------------------------
    Contenedor del carrusel
 --------------------------------- */
 
 
 .conference-carousel-container {
-    width: 60%;
+    width: 65%;
     max-width: 500px;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
     position: relative; /* Para posicionar las flechas si es necesario */
     display: flex;
     align-items: stretch;
@@ -1343,7 +1416,7 @@ margin-top: -6%;
     top: 0;
     left: 0;
     width: 100%;
-    height: 200px;
+   min-height: 200px;
     background-color: #000000;
     padding: 15px;
     box-sizing: border-box;
@@ -1387,14 +1460,76 @@ margin-top: -6%;
   --------------------------------- */
   .conference-carousel-container .slick-prev {
     left: -11px;
-    z-index: 1;
+    z-index: 10;
+    font-size: 30px;
   }
   
   .conference-carousel-container .slick-next {
     right: -11px;
-    z-index: 1;
+    z-index: 10;
   }
   
+  /* ================================= CONFERENCES MEDIA QUERYS ===========================================*/
+
+@media (max-width: 1024px) {
+
+.meetings h1{
+  margin-bottom: 10% !important;
+}
+.timeline-label{
+  font-size: 30px;
+}
+
+.conference-title,
+.conference-details,
+.conference-link {
+    font-size: 25px;
+  }
+
+  .conference-carousel-container .slick-prev.slick-arrow,
+  .conference-carousel-container .slick-next.slick-arrow {
+    transform: scale(1.5);     
+  }
+}
+
+
+@media (max-width: 768px) {
+
+.timeline-label{
+  font-size: 20px;
+}
+
+.conference-title,
+.conference-details,
+.conference-link {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+
+
+  /* Opcional: añadir algo de margen y espaciado */
+.timeline-label {
+    font-size: 15px;
+}
+
+ .conference-title {
+    font-size: 15px;
+  }
+  
+  .conference-details {
+    font-size: 12px;
+
+  }
+  
+
+}
+
+
+
 /*====================== FOOTER ======================*/
 
 footer {
