@@ -30,18 +30,25 @@ main {
 
 /* --- Reseteo y estilos base --- */
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
 html {
-    box-sizing: content-box;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit; 
+  box-sizing: inherit; /* Hereda el box-sizing del html */
+  margin: 0;
+  padding: 0;
 }
 
 body {
     background-color: rgb(253, 253, 253);
     font-family: "Raleway", sans-serif;
+    overflow-x: hidden;
 }
 
 
