@@ -30,26 +30,18 @@ main {
 
 /* --- Reseteo y estilos base --- */
 
-html, body {
-    width: 100%;
-    max-width: 100%;
-     overflow-x: hidden;
-}
-
 html {
-    box-sizing: border-box;
+    box-sizing: content-box;
+    overflow-x: hidden;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit; /* Hereda el box-sizing del html */
-  margin: 0;
-  padding: 0;
+  box-sizing: inherit; 
 }
 
 body {
     background-color: rgb(253, 253, 253);
     font-family: "Raleway", sans-serif;
-    overflow-x: hidden;
 }
 
 
@@ -1281,7 +1273,7 @@ margin-top: -6%;
 
 }
 
-/*============================================= CONFERENCES ===========================================*/
+/*========================================= CONFERENCES ===========================================*/
 
 .titulocarta {
   margin-bottom: 8%;
