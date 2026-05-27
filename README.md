@@ -1,15 +1,35 @@
+<h1 align="center">Interactive Personal Portfolio</h1>
 
-<h1 align="center"> Static Portafolio </h1>
+<p align="center">
+Personal web portfolio built with HTML, CSS and JavaScript to showcase professional background, projects, publications, courses and academic experience.
+</p>
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20CORRECCION-green) ![Badge en Desarollo](https://img.shields.io/badge/LICENSE-MIT-green)
+![Status](https://img.shields.io/badge/STATUS-ACTIVE-success)
+![License](https://img.shields.io/badge/LICENSE-MIT-green)
+![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-yellow)
+![Portfolio](https://img.shields.io/badge/TYPE-Personal%20Portfolio-blue)
 
-## :book:Descripción general
+---
 
-## :hammer: Estructura proyecto
+## 📌 Project Summary
 
-## :rocket:Funcionalidades
+This repository contains my official personal web portfolio.
 
-## :heavy_check_mark: Recursos adicionales
+The goal of this project is to present my professional profile in a clear, visual and interactive way, highlighting experience in bioinformatics, data analysis, research, teaching and software development.
 
-## 📁 Acceso al proyecto
+## 🔧 Core Features
+
+- Responsive frontend design
+- Dynamic content rendering from JSON
+- Interactive project cards
+- Course and certification sections
+- Conference timeline
+- Carousel components
+- Smooth scrolling navigation
+- Mobile hamburger menu
+- Visual animations and UI effects
+
+## 🛠 Tech Stack
+
+`HTML` `CSS` `JavaScript` `JSON` `GitHub Pages`
 
